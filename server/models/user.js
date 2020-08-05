@@ -2,7 +2,20 @@ import mongoose from "mongoose";
 import crypto from "crypto";
 const Schema = mongoose.Schema;
 
+let randomId = () => {
+  return Math.floor((1 + Math.random()) * 0x100000)
+    .toString(16)
+    .substring(1);
+};
+//testing randomID
+console.log(randomId());
+
 const userSchema = new Schema({
+  userId: {
+    type: String,
+    default: randomId(),
+    required: true,
+  },
   name: {
     type: String,
     trim: true,
@@ -22,25 +35,21 @@ const userSchema = new Schema({
   salt: {
     type: String,
   },
-  //   userSchema:{
-  //     userID:--random id generator funct
-  //     name:String(already done)
-  //     email:String(already done)
-  //     hashedPassword:String(already done)
-  //     salt:String(already done)
-  //     isLoggedIn:boolean --determines if user can create/vote on poll
-  //     pollsVotedOn:[pollID, pollID, pollID] --prevents user from voting twice on poll
-  //     polls:[{
-  //         pollID:random id generator funct, --will be used in route to display/share specific poll
-  //         pollTitle:String,
-  //         pollOptions:[{
-  //             optiontext:"", --stores option
-  //             optionVal:number --stores votes
-  //             }]
-  //     }]
-  // }
+  completedPolls: [{ pollId: String }],
+  polls: [
+    {
+      pollId: { type: String, default: randomId(), required: true },
+    },
+    { pollTitle: { type: String } },
+    {
+      pollOptions: [
+        { optionTitle: { type: String } },
+        { optionVal: { type: Number } },
+      ],
+    },
+  ],
 });
-
+console.log(userSchema);
 userSchema
   .virtual("password")
   .set(function (password) {
