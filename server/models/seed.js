@@ -5,7 +5,7 @@ user.create([
   {
     name: "John Doe",
     email: "john.doe@test.com",
-    hasedPassword: "test",
+    hashedPassword: "test",
     salt: "test",
     polls: [
       {
@@ -29,7 +29,7 @@ user.create([
   {
     name: "Jane Doe",
     email: "Jane.doe@test.com",
-    hasedPassword: "janetest",
+    hashedPassword: "janetest",
     salt: "janetest",
     polls: [
       {
