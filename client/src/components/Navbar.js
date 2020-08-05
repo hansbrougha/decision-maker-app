@@ -9,14 +9,14 @@ import auth from "./auth/auth-helper";
 import { Link, withRouter } from "react-router-dom";
 
 const isActive = (history, path) => {
-  if (history.location.pathname === path) return { color: "#F44336" };
+  if (history.location.pathname === path) return { color: "#ffffff" };
   else return { color: "#ffffff" };
 };
 const Menu = withRouter(({ history }) => (
   <AppBar position="static">
     <Toolbar>
       <Typography type="title" color="inherit">
-        MERN App
+        Decision-Maker
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
