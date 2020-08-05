@@ -2,10 +2,10 @@
   "name": "mern-material-demo",
   "version": "0.0.1",
   "description": "MERN stack auth demo with Material UI.",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "dev": "babel-watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
