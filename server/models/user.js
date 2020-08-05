@@ -6,22 +6,39 @@ const userSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: "User Name is required"
+    required: "User Name is required",
   },
   email: {
     type: String,
     trim: true,
     unique: "Email already exists",
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
-    required: "Email is required"
+    required: "Email is required",
   },
   hashedPassword: {
     type: String,
-    required: "Password is required"
+    required: "Password is required",
   },
   salt: {
-    type: String
-  }
+    type: String,
+  },
+  //   userSchema:{
+  //     userID:--random id generator funct
+  //     name:String(already done)
+  //     email:String(already done)
+  //     hashedPassword:String(already done)
+  //     salt:String(already done)
+  //     isLoggedIn:boolean --determines if user can create/vote on poll
+  //     pollsVotedOn:[pollID, pollID, pollID] --prevents user from voting twice on poll
+  //     polls:[{
+  //         pollID:random id generator funct, --will be used in route to display/share specific poll
+  //         pollTitle:String,
+  //         pollOptions:[{
+  //             optiontext:"", --stores option
+  //             optionVal:number --stores votes
+  //             }]
+  //     }]
+  // }
 });
 
 userSchema
@@ -52,7 +69,7 @@ userSchema.methods = {
   },
   makeSalt: function () {
     return Math.round(new Date().valueOf() * Math.random()) + "";
-  }
+  },
 };
 
 userSchema.path("hashedPassword").validate(function (v) {
