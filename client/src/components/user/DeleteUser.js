@@ -9,7 +9,8 @@ import Dialog from "@material-ui/core/Dialog";
 import Delete from "@material-ui/icons/Delete";
 import auth from "../auth/auth-helper";
 import { deleteUser } from "../../utils/api-user";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+// import { Redirect, Link } from "react-router-dom";
 
 class DeleteUser extends Component {
   state = {

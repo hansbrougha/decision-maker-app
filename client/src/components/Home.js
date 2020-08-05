@@ -10,12 +10,12 @@ const styles = (theme) => ({
   card: {
     maxWidth: 700,
     margin: "auto",
-    marginTop: theme.spacing.unit * 5
+    marginTop: theme.spacing(5)
   },
   title: {
-    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${
-      theme.spacing.unit * 2
-    }px`,
+    padding: `${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(
+      2
+    )}px`,
     color: theme.palette.text.secondary,
     fontSize: 24
   },
