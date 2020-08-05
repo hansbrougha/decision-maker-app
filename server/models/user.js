@@ -2,28 +2,54 @@ import mongoose from "mongoose";
 import crypto from "crypto";
 const Schema = mongoose.Schema;
 
+let randomId = () => {
+  return Math.floor((1 + Math.random()) * 0x100000)
+    .toString(16)
+    .substring(1);
+};
+//testing randomID
+console.log(randomId());
+
 const userSchema = new Schema({
+  userId: {
+    type: String,
+    default: randomId(),
+    required: true,
+  },
   name: {
     type: String,
     trim: true,
-    required: "User Name is required"
+    required: "User Name is required",
   },
   email: {
     type: String,
     trim: true,
     unique: "Email already exists",
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
-    required: "Email is required"
+    required: "Email is required",
   },
   hashedPassword: {
     type: String,
-    required: "Password is required"
+    required: "Password is required",
   },
   salt: {
-    type: String
-  }
+    type: String,
+  },
+  completedPolls: [{ pollId: String }],
+  polls: [
+    {
+      pollId: { type: String, default: randomId(), required: true },
+    },
+    { pollTitle: { type: String } },
+    {
+      pollOptions: [
+        { optionTitle: { type: String } },
+        { optionVal: { type: Number } },
+      ],
+    },
+  ],
 });
-
+console.log(userSchema);
 userSchema
   .virtual("password")
   .set(function (password) {
@@ -52,7 +78,7 @@ userSchema.methods = {
   },
   makeSalt: function () {
     return Math.round(new Date().valueOf() * Math.random()) + "";
-  }
+  },
 };
 
 userSchema.path("hashedPassword").validate(function (v) {
