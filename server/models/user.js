@@ -11,7 +11,7 @@ let randomId = () => {
 console.log(randomId());
 
 const userSchema = new Schema({
-  userId: {
+  profileId: {
     type: String,
     default: randomId(),
     required: true,

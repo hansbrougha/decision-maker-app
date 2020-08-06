@@ -3,9 +3,9 @@ export const registerUser = (user) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
     .then((response) => {
       return response.json();
@@ -14,13 +14,18 @@ export const registerUser = (user) => {
 };
 
 export const findUserProfile = (params, credentials) => {
+  //checking userId
+
+  console.log("params: " + JSON.stringify(params.userId));
+  console.log("credentials: " + JSON.stringify(credentials));
+
   return fetch("/api/users/" + params.userId, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
-    }
+      Authorization: "Bearer " + credentials.t,
+    },
   })
     .then((response) => {
       return response.json();
@@ -34,8 +39,8 @@ export const deleteUser = (params, credentials) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
-    }
+      Authorization: "Bearer " + credentials.t,
+    },
   })
     .then((response) => {
       return response.json();
