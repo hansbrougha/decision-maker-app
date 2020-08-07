@@ -6,44 +6,62 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import PollIcon from "@material-ui/icons/Poll";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: 500,
-    background: "#009688"
+    width: "100%",
+    background: theme.palette.primary.main,
+    marginTop: "10px"
   },
   bottomNav: {
-    color: "#ffffff"
+    color: theme.palette.primary.contrastText,
+    width: "100%"
+  },
+  footer: {
+    background: theme.palette.primary.main
+  },
+  stickToBottom: {
+    width: "100%",
+    position: "fixed",
+    bottom: 0
   }
-});
+}));
 
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}
-    >
-      <BottomNavigationAction
-        className={classes.bottomNav}
-        label="Recents"
-        icon={<RestoreIcon />}
-      />
-      <BottomNavigationAction
-        className={classes.bottomNav}
-        label="My Decisions"
-        icon={<PollIcon />}
-      />
-      <BottomNavigationAction
-        className={classes.bottomNav}
-        label="Create Decision"
-        icon={<AddCircleIcon />}
-      />
-    </BottomNavigation>
+    <footer className={classes.stickToBottom}>
+      <center>
+        <BottomNavigation
+          className={classes.stickToBottom}
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          showLabels
+          className={classes.root}
+        >
+          <BottomNavigationAction
+            className={classes.bottomNav}
+            label="Recents"
+            icon={<RestoreIcon />}
+            href="/polls"
+          />
+          <BottomNavigationAction
+            className={classes.bottomNav}
+            label="My Decisions"
+            icon={<PollIcon />}
+            href="/user/:id"
+          />
+          <BottomNavigationAction
+            className={classes.bottomNav}
+            label="Create Decision"
+            icon={<AddCircleIcon />}
+            href="/polls"
+          />
+        </BottomNavigation>
+      </center>
+    </footer>
   );
 }

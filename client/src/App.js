@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 // import green from "@material-ui/core/colors/green";
 // import red from "@material-ui/core/colors/red";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
+import BottomNav from "./components/BottomNav/BottomNav";
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -27,15 +29,17 @@ const theme = createMuiTheme({
     },
     openTitle: "#1D8B75",
     protectTitle: "#1D8B50",
-    type: "dark",
-  },
+    type: "dark"
+  }
 });
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <MuiThemeProvider theme={theme}>
+          <CssBaseline />
           <Routes />
+          <BottomNav />
         </MuiThemeProvider>
       </BrowserRouter>
     );
