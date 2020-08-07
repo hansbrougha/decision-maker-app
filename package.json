@@ -10,8 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Aman Mittal <amandeepmittal@live.com> (www.amanhimself.me)",
-  "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
