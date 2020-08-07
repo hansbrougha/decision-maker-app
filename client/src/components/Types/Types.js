@@ -1,59 +1,58 @@
+/* eslint-disable no-use-before-define */
 import React from "react";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    background: "#424242",
-    color: "#ffffff"
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1)
   },
-
-  title: {
-    fontSize: 25
-  },
-  button: {
-    background: "#009688",
-    color: "#ffffff",
-    margin: "10px 0 auto"
-  },
-  card: {
-    background: "#000000"
+  autocomplete: {
+    background: theme.palette.secondary.main,
+    color: theme.palette.primary.dark,
+    paddingLeft: "15px",
+    paddingRight: "15px",
+    paddingBottom: "10px"
   }
-});
+}));
 
-export default function OutlinedCard() {
+export default function Playground() {
   const classes = useStyles();
+  const defaultProps = {
+    options: decisionTypes,
+    getOptionLabel: (option) => option.title
+  };
+
+  const flatProps = {
+    options: decisionTypes.map((option) => option.title)
+  };
+
+  const [value, setValue] = React.useState(null);
 
   return (
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography className={classes.title} color="#000000" gutterBottom>
-          Make a Decision!
-        </Typography>
-
-        <Typography className={classes.pos} color="#ffffff">
-          Options
-        </Typography>
-        <Typography variant="body2" component="p">
-          <Button className={classes.button} size="large">
-            Take a Poll
-          </Button>
-          <br />
-          <Button className={classes.button} size="large">
-            Rock Scissors paper
-          </Button>
-          <br />
-          <Button className={classes.button} size="large">
-            Randomizer
-          </Button>
-        </Typography>
-      </CardContent>
-      <CardActions />
-    </Card>
+    <div style={{ width: 300 }}>
+      <Autocomplete
+        className={classes.autocomplete}
+        {...defaultProps}
+        id="Decision Type"
+        autoComplete
+        includeInputInList
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="How Do You Want To Decide?"
+            margin="normal"
+          />
+        )}
+      />
+    </div>
   );
 }
+
+// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+const decisionTypes = [
+  { title: "Create Poll" },
+  { title: "Rock Scissors Paper" },
+  { title: "Randomizer" }
+];

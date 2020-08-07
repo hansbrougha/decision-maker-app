@@ -11,6 +11,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
