@@ -1,7 +1,7 @@
 import User from "./user";
 import mongoose from "mongoose";
 
-user.create([
+User.create([
   {
     name: "John Doe",
     email: "john.doe@test.com",
@@ -9,6 +9,7 @@ user.create([
     salt: "test",
     polls: [
       {
+        pollId: "testId1",
         pollTitle: "Does This Work?",
         pollOptions: [
           { optionTitle: "YEA", optionVal: 1 },
@@ -16,6 +17,7 @@ user.create([
         ],
       },
       {
+        pollId: "testId2",
         pollTitle: "What should I eat for dinner?",
         pollOptions: [
           { optionTitle: "Chipotle", optionVal: 39 },
@@ -33,6 +35,7 @@ user.create([
     salt: "janetest",
     polls: [
       {
+        pollId: "testId3",
         pollTitle: "Should I sleep?",
         pollOptions: [
           { optionTitle: "YEA", optionVal: 4 },
@@ -40,6 +43,7 @@ user.create([
         ],
       },
       {
+        pollId: "testId4",
         pollTitle: "What is your favorite color?",
         pollOptions: [
           { optionTitle: "Yellow", optionVal: 3 },
@@ -51,7 +55,6 @@ user.create([
     ],
   },
 ]);
-
 // polls: [
 //     {
 //       pollId: { type: String, default: randomId(), required: true },
