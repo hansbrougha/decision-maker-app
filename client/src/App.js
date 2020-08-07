@@ -28,7 +28,7 @@ const theme = createMuiTheme({
       contrastText: "#000",
     },
     openTitle: "#1D8B75",
-    protectTitle: "#1D8B75",
+    protectTitle: "#1D8B50",
     type: "dark",
   },
 });

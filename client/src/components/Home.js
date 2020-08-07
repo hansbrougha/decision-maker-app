@@ -5,7 +5,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import logo from "../logo.svg";
-import svg from "../imgs/undraw_growth_chart_r99m.svg";
+import pollsImg from "../imgs/Polls.svg";
+import newPollImg from "../imgs/newPollImg.svg";
 
 const styles = (theme) => ({
   card: {
@@ -32,15 +33,21 @@ class Home extends Component {
       <div>
         <Card className={classes.card}>
           <Typography type="headline" component="h2" className={classes.title}>
-            Welcome to the MERN APP
+            DECISION-MAKER
           </Typography>
 
           <CardContent align="center">
             <Typography type="body1" component="p">
               Make a poll, or a decision, or....something. <br />
               <a href="/polls">
-                <img src={svg} />{" "}
+                <img alt="view-polls" src={pollsImg} />{" "}
               </a>
+              <div>VIEW POLLS</div>
+              <hr />
+              <a href="/polls">
+                <img alt="create-poll" src={newPollImg} />{" "}
+              </a>
+              <div>CREATE POLL</div>
             </Typography>
           </CardContent>
         </Card>
