@@ -43,13 +43,11 @@ const userSchema = new Schema({
     { pollTitle: { type: String } },
     {
       pollOptions: [
-        { optionTitle: { type: String } },
-        { optionVal: { type: Number } },
+        { optionTitle: { type: String }, optionVal: { type: Number } },
       ],
     },
   ],
 });
-console.log(userSchema);
 userSchema
   .virtual("password")
   .set(function (password) {
