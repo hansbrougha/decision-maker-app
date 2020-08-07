@@ -7,6 +7,8 @@ import PrivateRoutes from "./components/auth/PrivateRoutes";
 import Signin from "./components/auth/Signin";
 import Profile from "./components/user/Profile";
 import Signup from "./components/user/Signup";
+import Polls from "./components/Polls";
+import NewPoll from "./components/NewPoll";
 
 class Routes extends Component {
   render() {
@@ -17,6 +19,9 @@ class Routes extends Component {
           <Route exact path="/" component={Home} />
           <PrivateRoutes path="/user/edit/:userId" />
           <Route path="/user/:userId" component={Profile} />
+          <Route path="/polls" component={Polls} />
+          <Route path="/newpoll" component={NewPoll} />
+
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
         </Switch>
