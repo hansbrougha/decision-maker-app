@@ -5,7 +5,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import logo from "../logo.svg";
-import svg from "../imgs/undraw_growth_chart_r99m.svg";
 
 const styles = (theme) => ({
   card: {
@@ -25,7 +24,7 @@ const styles = (theme) => ({
   },
 });
 
-class Home extends Component {
+class Polls extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -39,7 +38,7 @@ class Home extends Component {
             <Typography type="body1" component="p">
               Make a poll, or a decision, or....something. <br />
               <a href="/polls">
-                <img src={svg} />{" "}
+                <img src="https://img.icons8.com/windows/96/000000/poll-horizontal.png" />{" "}
               </a>
             </Typography>
           </CardContent>
@@ -49,4 +48,4 @@ class Home extends Component {
   }
 }
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Polls);
