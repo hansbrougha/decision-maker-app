@@ -21,13 +21,13 @@ const styles = (theme) => ({
   root: theme.mixins.gutters({
     maxWidth: 600,
     margin: "auto",
-    padding: theme.spacing.unit * 3,
-    marginTop: theme.spacing.unit * 5,
+    padding: theme.spacing(3),
+    marginTop: theme.spacing(5)
   }),
   title: {
-    margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 2}px`,
-    color: theme.palette.protectedTitle,
-  },
+    margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
+    color: theme.palette.protectedTitle
+  }
 });
 
 class Profile extends Component {
@@ -35,7 +35,7 @@ class Profile extends Component {
     super();
     this.state = {
       user: "",
-      redirectToSignin: false,
+      redirectToSignin: false
     };
     this.match = match;
   }
@@ -43,7 +43,7 @@ class Profile extends Component {
     const jwt = auth.isAuthenticated();
     findUserProfile(
       {
-        userId: userId,
+        userId: userId
       },
       { t: jwt.token }
     ).then((data) => {
