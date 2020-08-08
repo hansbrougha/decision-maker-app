@@ -5,6 +5,7 @@
   "proxy": "http://localhost:4000/",
   "type": "module",
   "dependencies": {
+    "@material-ui/lab": "latest",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
