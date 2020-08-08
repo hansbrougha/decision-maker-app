@@ -36,7 +36,7 @@ class Home extends Component {
             <Paper className={classes.paper}>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <Typography type="body1" component="p">
+                  <Typography type="body1" component="div">
                     <a href="/polls">
                       <img alt="view-polls" src={pollsImg} />
                     </a>
@@ -52,7 +52,7 @@ class Home extends Component {
                 <CardContent align="center">
                   <br />
                   <br />
-                  <Typography type="body1" component="p">
+                  <Typography type="body1" component="div">
                     <a href="/polls">
                       <img alt="create-poll" src={newPollImg} />{" "}
                     </a>
