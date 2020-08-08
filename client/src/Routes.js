@@ -27,7 +27,7 @@ class Routes extends Component {
     return (
       <Router>
         <Navbar />
-        <Suspense fallback={<CircularProgress className="loading" />}>
+        <Suspense fallback={<CircularProgress />}>
           <Switch>
             <Route exact path="/" component={Home} />
             <PrivateRoutes path="/user/edit/:userId" />
