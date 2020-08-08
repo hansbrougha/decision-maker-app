@@ -31,16 +31,18 @@ class Home extends Component {
     return (
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={0} sm={0} md={1} lg={1} xl={1}></Grid>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <Typography type="body1" component="div">
-                    <a href="/polls">
-                      <img alt="view-polls" src={pollsImg} />
-                    </a>
-                    <div>Recent Polls</div>
+
+                  <a href="/polls">
+                    <img alt="view-polls" src={pollsImg} />
+                  </a>
+                  <Typography type="body1" component="h2">
+                    Recent Polls
+
                   </Typography>
                 </CardContent>
               </Card>
@@ -52,17 +54,19 @@ class Home extends Component {
                 <CardContent align="center">
                   <br />
                   <br />
-                  <Typography type="body1" component="div">
-                    <a href="/polls">
-                      <img alt="create-poll" src={newPollImg} />{" "}
-                    </a>
-                    <div>Create Poll</div>
+
+                  <a href="/polls">
+                    <img alt="create-poll" src={newPollImg} />{" "}
+                  </a>
+                  <Typography type="body1" component="h2">
+                    Create Poll
+
                   </Typography>
                 </CardContent>
               </Card>
             </Paper>
           </Grid>
-          <Grid item s={0} sm={0} md={1} lg={1} xl={1}></Grid>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
         </Grid>
       </div>
     );

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import green from "@material-ui/core/colors/green";
-// import red from "@material-ui/core/colors/red";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 import BottomNav from "./components/BottomNav/BottomNav";
