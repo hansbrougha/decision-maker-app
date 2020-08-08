@@ -5,6 +5,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import logo from "../logo.svg";
+//https://undraw.co/illustrations
+
 import pollsImg from "../imgs/Polls.svg";
 import newPollImg from "../imgs/newPollImg.svg";
 import Grid from "@material-ui/core/Grid";
