@@ -22,14 +22,14 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoutes path="/user/edit/:userId" />
-          <Route path="/user/:userId" component={Profile} />
+          <Route path="/users/:id" component={Profile} />
           <Route path="/polls" component={Polls} />
           <Route path="/newpoll" component={NewPoll} />
 
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
 
-          <Route path="/:pollId" component={TakePoll} />
+          {/* <Route path="/:pollId" component={TakePoll} /> */}
           <Route path="/:pollId" component={PollChart} />
 
           {/* <Route path="/pollDisplay" component={PollDisplay} /> */}
