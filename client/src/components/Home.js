@@ -6,7 +6,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import logo from "../logo.svg";
 //https://undraw.co/illustrations
-
 import pollsImg from "../imgs/Polls.svg";
 import newPollImg from "../imgs/newPollImg.svg";
 import Grid from "@material-ui/core/Grid";
@@ -16,14 +15,14 @@ const styles = (theme) => ({
   card: {
     margin: "auto",
     marginTop: theme.spacing(5),
-    height: 300
+    height: 300,
   },
 
   media: {
     minHeight: 450,
     maxHeight: 550,
-    maxWidth: 300
-  }
+    maxWidth: 300,
+  },
 });
 
 class Home extends Component {
@@ -32,16 +31,18 @@ class Home extends Component {
     return (
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={0} sm={0} md={1} lg={1} xl={1}></Grid>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <Typography type="body1" component="p">
-                    <a href="/polls">
-                      <img alt="view-polls" src={pollsImg} />
-                    </a>
-                    <div>Recent Polls</div>
+
+                  <a href="/polls">
+                    <img alt="view-polls" src={pollsImg} />
+                  </a>
+                  <Typography type="body1" component="h2">
+                    Recent Polls
+
                   </Typography>
                 </CardContent>
               </Card>
@@ -53,17 +54,19 @@ class Home extends Component {
                 <CardContent align="center">
                   <br />
                   <br />
-                  <Typography type="body1" component="p">
-                    <a href="/polls">
-                      <img alt="create-poll" src={newPollImg} />{" "}
-                    </a>
-                    <div>Create Poll</div>
+
+                  <a href="/polls">
+                    <img alt="create-poll" src={newPollImg} />{" "}
+                  </a>
+                  <Typography type="body1" component="h2">
+                    Create Poll
+
                   </Typography>
                 </CardContent>
               </Card>
             </Paper>
           </Grid>
-          <Grid item s={0} sm={0} md={1} lg={1} xl={1}></Grid>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
         </Grid>
       </div>
     );
