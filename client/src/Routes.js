@@ -11,6 +11,7 @@ import Polls from "./components/Polls";
 import NewPoll from "./components/NewPoll";
 import TakePoll from "./components/TakePoll/TakePoll";
 import PollChart from "./components/PollChart/PollChart";
+import PollDisplay from "./components/PollDisplay";
 
 class Routes extends Component {
   render() {
@@ -23,11 +24,13 @@ class Routes extends Component {
           <Route path="/user/:userId" component={Profile} />
           <Route path="/polls" component={Polls} />
           <Route path="/newpoll" component={NewPoll} />
-          <Route path="/:pollId" component={TakePoll} />
-          <Route path="/:pollId" component={PollChart} />
-
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
+          <Route path="/pollId" component={TakePoll} />
+          <Route path="/pollChart" component={PollChart} />
+          <Route path="/pollDisplay" component={PollDisplay} />
+
+
         </Switch>
       </div>
     );

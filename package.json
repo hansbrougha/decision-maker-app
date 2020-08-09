@@ -16,13 +16,16 @@
   },
   "keywords": [],
   "dependencies": {
+    "@devexpress/dx-react-chart": "^2.7.0",
+    "@devexpress/dx-react-chart-material-ui": "2.7.0",
+    "@devexpress/dx-react-core": "2.7.0",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.8",
-    "if-env": "^1.0.4"
+    "mongoose": "^5.3.8"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
