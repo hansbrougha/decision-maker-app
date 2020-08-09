@@ -1,5 +1,5 @@
 {
-  "name": "mern-material-demo",
+  "name": "decision-maker-app",
   "version": "0.0.1",
   "description": "MERN stack auth demo with Material UI.",
   "main": "server.js",

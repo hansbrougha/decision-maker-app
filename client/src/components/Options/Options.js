@@ -46,7 +46,7 @@ export default function Playground() {
         size="large"
         color="primary"
         className={classes.button}
-        href="home"
+        href="/"
       >
         Add Options
       </Button>
