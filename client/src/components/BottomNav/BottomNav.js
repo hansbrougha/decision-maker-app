@@ -45,7 +45,7 @@ export default function SimpleBottomNavigation() {
             className={classes.bottomNav}
             label="Recents"
             icon={<RestoreIcon />}
-            href="/polls"
+            href="/recent"
           />
           <BottomNavigationAction
             className={classes.bottomNav}
@@ -58,6 +58,7 @@ export default function SimpleBottomNavigation() {
             label="Create Decision"
             icon={<AddCircleIcon />}
             href="/polls"
+            size="large"
           />
         </BottomNavigation>
       </center>
