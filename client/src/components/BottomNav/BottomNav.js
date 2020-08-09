@@ -34,13 +34,12 @@ export default function SimpleBottomNavigation() {
     <footer className={classes.stickToBottom}>
       <center>
         <BottomNavigation
-          className={classes.stickToBottom}
+          className={(classes.stickToBottom, classes.root)}
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
           showLabels
-          className={classes.root}
         >
           <BottomNavigationAction
             className={classes.bottomNav}

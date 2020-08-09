@@ -56,7 +56,7 @@ class Profile extends Component {
     });
     console.log("jwt: " + JSON.stringify(jwt));
   };
-  componentWillReceiveProps = (props) => {
+  componentDidUpdate = (props) => {
     this.init(props.match.params.userId);
   };
   componentDidMount = () => {
