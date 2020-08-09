@@ -3,11 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Deciders from "../Deciders/Deciders";
-
-import Types from "../Types/Types";
+// import Deciders from "../Deciders/Deciders";
+// import Types from "../Types/Types";
 import Decision from "../Decision/Decision";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,21 +38,10 @@ export default function SimpleCard() {
         >
           Create a Decision
         </Typography>
-        <form>
-          <center>
-            <Decision />
-            <Deciders />
-            <Types />
-          </center>
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            className={classes.button}
-          >
-            Create
-          </Button>
-        </form>
+
+        <Decision />
+        {/* <Deciders />
+            <Types /> */}
       </CardContent>
     </Card>
   );
