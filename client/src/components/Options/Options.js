@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   textfield: {
     background: theme.palette.secondary.main,
@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "15px",
     paddingRight: "15px",
     paddingBottom: "10px",
-    width: 270
+    width: 270,
   },
   button: {
     margin: "auto",
     marginTop: "10px",
-    color: theme.palette.secondary.main
-  }
+    color: theme.palette.secondary.main,
+  },
 }));
 
 export default function Playground() {
@@ -47,6 +47,7 @@ export default function Playground() {
         color="primary"
         className={classes.button}
         href="/"
+        //change href to direct to '/:pollId' (once working)
       >
         Add Options
       </Button>
