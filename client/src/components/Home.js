@@ -36,7 +36,7 @@ class Home extends Component {
             <Paper className={classes.paper}>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <a href="/polls">
+                  <a href="/recent">
                     <img alt="view-polls" src={pollsImg} />
                   </a>
                   <Typography type="body1" component="h2">

@@ -12,6 +12,7 @@ import Polls from "./components/Polls";
 import NewPoll from "./components/NewPoll";
 import TakePoll from "./components/TakePoll/TakePoll";
 import PollChart from "./components/PollChart/PollChart";
+import Recents from "./components/Recents";
 
 // import PollDisplay from "./components/PollDisplay";
 class Routes extends Component {
@@ -28,6 +29,7 @@ class Routes extends Component {
 
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
+          <Route path="/recent" component={Recents} />
 
           <Route path="/:pollId" component={TakePoll} />
           <Route path="/:pollId" component={PollChart} />
