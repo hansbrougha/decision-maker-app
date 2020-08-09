@@ -10,10 +10,10 @@ import Signup from "./components/user/Signup";
 
 import Polls from "./components/Polls";
 import NewPoll from "./components/NewPoll";
-import TakePoll from "./components/TakePoll/TakePoll";
+// import TakePoll from "./components/TakePoll/TakePoll";
 import PollChart from "./components/PollChart/PollChart";
 
-// import PollDisplay from "./components/PollDisplay";
+import PollDisplay from "./components/PollDisplay";
 class Routes extends Component {
   render() {
     return (
@@ -32,7 +32,7 @@ class Routes extends Component {
           {/* <Route path="/:pollId" component={TakePoll} /> */}
           <Route path="/:pollId" component={PollChart} />
 
-          {/* <Route path="/pollDisplay" component={PollDisplay} /> */}
+          <Route path="/:pollId/pollDisplay" component={PollDisplay} />
         </Switch>
       </div>
     );
