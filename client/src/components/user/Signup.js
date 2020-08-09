@@ -32,8 +32,8 @@ const styles = (theme) => ({
     color: theme.palette.openTitle,
   },
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
     width: 300,
   },
   submit: {

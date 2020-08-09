@@ -18,24 +18,24 @@ const styles = (theme) => ({
     margin: "auto",
     textAlign: "center",
     marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   error: {
-    verticalAlign: "middle"
+    verticalAlign: "middle",
   },
   title: {
     marginTop: theme.spacing(2),
-    color: theme.palette.openTitle
+    color: theme.palette.openTitle,
   },
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 300
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 300,
   },
   submit: {
     margin: "auto",
-    marginBottom: theme.spacing(2)
-  }
+    marginBottom: theme.spacing(2),
+  },
 });
 
 class Signin extends Component {
@@ -43,13 +43,13 @@ class Signin extends Component {
     email: "",
     password: "",
     error: "",
-    redirectToReferrer: false
+    redirectToReferrer: false,
   };
 
   clickSubmit = () => {
     const user = {
       email: this.state.email || undefined,
-      password: this.state.password || undefined
+      password: this.state.password || undefined,
     };
 
     signin(user).then((data) => {
@@ -71,8 +71,8 @@ class Signin extends Component {
     const { classes } = this.props;
     const { from } = this.props.location.state || {
       from: {
-        pathname: "/"
-      }
+        pathname: "/",
+      },
     };
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer) {
