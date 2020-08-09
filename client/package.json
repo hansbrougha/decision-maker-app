@@ -16,7 +16,10 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "@devexpress/dx-react-chart": "^2.7.0",
+    "@devexpress/dx-react-chart-material-ui": "2.7.0",
+    "@devexpress/dx-react-core": "2.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
