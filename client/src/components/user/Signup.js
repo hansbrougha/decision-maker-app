@@ -22,24 +22,24 @@ const styles = (theme) => ({
     margin: "auto",
     textAlign: "center",
     marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   error: {
-    verticalAlign: "middle"
+    verticalAlign: "middle",
   },
   title: {
     marginTop: theme.spacing(2),
-    color: theme.palette.openTitle
+    color: theme.palette.openTitle,
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 300
+    width: 300,
   },
   submit: {
     margin: "auto",
-    marginBottom: theme.spacing(2)
-  }
+    marginBottom: theme.spacing(2),
+  },
 });
 
 class Signup extends Component {
@@ -48,7 +48,7 @@ class Signup extends Component {
     password: "",
     email: "",
     open: false,
-    error: ""
+    error: "",
   };
 
   handleChange = (name) => (event) => {
@@ -59,7 +59,7 @@ class Signup extends Component {
     const user = {
       name: this.state.name || undefined,
       email: this.state.email || undefined,
-      password: this.state.password || undefined
+      password: this.state.password || undefined,
     };
     registerUser(user).then((data) => {
       if (data.error) {
@@ -124,7 +124,7 @@ class Signup extends Component {
           <CardActions>
             <Button
               color="primary"
-              variant="raised"
+              variant="contained"
               onClick={this.clickSubmit}
               className={classes.submit}
             >
@@ -141,7 +141,7 @@ class Signup extends Component {
           </DialogContent>
           <DialogActions>
             <Link to="/signin">
-              <Button color="primary" autoFocus="autoFocus" variant="raised">
+              <Button color="primary" autoFocus="autoFocus" variant="contained">
                 Sign In
               </Button>
             </Link>
