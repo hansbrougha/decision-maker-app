@@ -5,9 +5,9 @@ import CardContent from "@material-ui/core/CardContent";
 
 import Typography from "@material-ui/core/Typography";
 
-//https://undraw.co/illustrations
-import pollsImg from "../imgs/Polls.svg";
-import newPollImg from "../imgs/newPollImg.svg";
+//https://www.iconshock.com/
+import pollsImg from "../imgs/recentPolls.png";
+import newPollImg from "../imgs/newPoll.png";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
@@ -15,14 +15,14 @@ const styles = (theme) => ({
   card: {
     margin: "auto",
     marginTop: theme.spacing(5),
-    height: 300
+    height: 300,
   },
 
   media: {
     minHeight: 450,
     maxHeight: 550,
-    maxWidth: 300
-  }
+    maxWidth: 300,
+  },
 });
 
 class Home extends Component {
