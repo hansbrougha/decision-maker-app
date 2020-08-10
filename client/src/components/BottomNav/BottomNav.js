@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState();
 
   return (
     <footer className={classes.stickToBottom}>
