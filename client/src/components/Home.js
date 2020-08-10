@@ -5,24 +5,27 @@ import CardContent from "@material-ui/core/CardContent";
 
 import Typography from "@material-ui/core/Typography";
 
-//https://undraw.co/illustrations
-import pollsImg from "../imgs/Polls.svg";
-import newPollImg from "../imgs/newPollImg.svg";
+//https://www.iconshock.com/
+// import pollsImg from "../imgs/recentPolls.png";
+// import newPollImg from "../imgs/newPoll.png";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import "./home.css";
+import PollIcon from "@material-ui/icons/Poll";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 const styles = (theme) => ({
   card: {
     margin: "auto",
     marginTop: theme.spacing(5),
-    height: 300
+    height: 300,
   },
 
   media: {
     minHeight: 450,
     maxHeight: 550,
-    maxWidth: 300
-  }
+    maxWidth: 300,
+  },
 });
 
 class Home extends Component {
@@ -35,10 +38,16 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent align="center">
+                <CardContent className="card" align="center">
                   <a href="/recent">
-                    <img alt="view-polls" src={pollsImg} />
+                    <PollIcon
+                      alt="view-polls"
+                      className="icon"
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
+                    />
                   </a>
+
                   <Typography type="body1" component="h2">
                     Recent Polls
                   </Typography>
@@ -49,13 +58,16 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent align="center">
-                  <br />
-                  <br />
-
+                <CardContent className="card" align="center">
                   <a href="/polls">
-                    <img alt="create-poll" src={newPollImg} />{" "}
+                    <AddCircleIcon
+                      alt="create-poll"
+                      className="icon"
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
+                    />
                   </a>
+
                   <Typography type="body1" component="h2">
                     Create Poll
                   </Typography>
