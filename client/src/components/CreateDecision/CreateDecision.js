@@ -10,7 +10,7 @@ import Decision from "../Decision/Decision";
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
-    background: theme.palette.secondary.main,
+    background: theme.palette.secondary,
     margin: "auto"
   },
   title: {

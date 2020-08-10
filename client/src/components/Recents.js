@@ -30,13 +30,8 @@ class Polls extends Component {
     return (
       <div>
         <CssBaseline />
-        <Card className={classes.card}>
-          <CardContent align="center">
-            <Typography className={classes.title} gutterBottom>
-              Recent Polls
-            </Typography>
-            <RecentPolls />
-          </CardContent>
+        <Card className={classes.card} align="center">
+          <RecentPolls />
         </Card>
       </div>
     );
