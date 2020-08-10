@@ -18,14 +18,14 @@ const styles = (theme) => ({
   card: {
     margin: "auto",
     marginTop: theme.spacing(5),
-    height: 300,
+    height: 300
   },
 
   media: {
     minHeight: 450,
     maxHeight: 550,
-    maxWidth: 300,
-  },
+    maxWidth: 300
+  }
 });
 
 class Home extends Component {
@@ -59,7 +59,7 @@ class Home extends Component {
             <Paper className={classes.paper}>
               <Card className={classes.card}>
                 <CardContent className="card" align="center">
-                  <a href="/polls">
+                  <a href="/create">
                     <AddCircleIcon
                       alt="create-poll"
                       className="icon"

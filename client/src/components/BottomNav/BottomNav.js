@@ -10,20 +10,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     background: theme.palette.primary.main,
-    marginTop: "10px",
+    marginTop: "10px"
   },
   bottomNav: {
     color: theme.palette.primary.contrastText,
-    width: "100%",
+    width: "100%"
   },
   footer: {
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.main
   },
   stickToBottom: {
     width: "100%",
     position: "fixed",
-    bottom: 0,
-  },
+    bottom: 0
+  }
 }));
 
 export default function SimpleBottomNavigation() {
@@ -57,7 +57,7 @@ export default function SimpleBottomNavigation() {
             className={classes.bottomNav}
             label="Create Decision"
             icon={<AddCircleIcon />}
-            href="/polls"
+            href="/create"
             size="large"
           />
         </BottomNavigation>

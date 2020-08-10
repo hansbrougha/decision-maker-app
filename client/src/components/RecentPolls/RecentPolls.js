@@ -6,11 +6,11 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PollChart from "../PollChart/PollChart";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    background: theme.palette.secondary.main
+    width: "100%"
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
@@ -92,7 +92,9 @@ export default function ControlledAccordions() {
             <br />
           </Typography>
         </AccordionDetails>
-        <PollChart />
+        <Box>
+          <PollChart />
+        </Box>
       </Accordion>
       <Accordion
         expanded={expanded === "showStatus"}

@@ -14,6 +14,7 @@ import auth from "../auth/auth-helper";
 import { findUserProfile } from "../../utils/api-user.js";
 import { Redirect } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
+import RecentPolls from "../RecentPolls/RecentPolls";
 
 import DeleteUser from "./DeleteUser";
 
@@ -93,6 +94,7 @@ class Profile extends Component {
           </ListItem>
           <Divider />
         </List>
+        <RecentPolls />
       </Paper>
     );
   }
