@@ -12,24 +12,28 @@ import { Animation } from "@devexpress/dx-react-chart";
 // Data should be pulled from our backend
 
 const data = [
+
   { optionTitle: "Someone", optionVal: 6 },
   { optionTitle: "Joe", optionVal: 6 },
   { optionTitle: "Jacob", optionVal: 6 },
   { optionTitle: "Andrew", optionVal: 6 },
   { optionTitle: "Angel", optionVal: 6 },
+
 ];
 
 export default class PollChart extends React.PureComponent {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+
 
     this.state = {
       data,
     };
   }
 
-  render() {
-    const { data: chartData } = this.state;
+    render() {
+        const { data: chartData } = this.state;
+
 
     return (
       <Paper>
@@ -46,4 +50,5 @@ export default class PollChart extends React.PureComponent {
       </Paper>
     );
   }
+
 }
