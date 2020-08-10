@@ -58,7 +58,7 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent lassName="card" align="center">
+                <CardContent className="card" align="center">
                   <a href="/polls">
                     <AddCircleIcon
                       alt="create-poll"
