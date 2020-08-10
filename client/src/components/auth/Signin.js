@@ -11,6 +11,7 @@ import { withStyles } from "@material-ui/core/styles";
 import auth from "./auth-helper";
 import { Redirect } from "react-router-dom";
 import { signin } from "../../utils/api-auth.js";
+import Alert from "@material-ui/lab/Alert";
 
 const styles = (theme) => ({
   card: {
@@ -81,6 +82,9 @@ class Signin extends Component {
 
     return (
       <Card className={classes.card}>
+        <Alert severity="info" action={<Button href="/signup">SIGN UP</Button>}>
+          Must have an account to view/create polls!
+        </Alert>
         <CardContent>
           <Typography type="headline" component="h2" className={classes.title}>
             Sign In

@@ -6,10 +6,13 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 //https://www.iconshock.com/
-import pollsImg from "../imgs/recentPolls.png";
-import newPollImg from "../imgs/newPoll.png";
+// import pollsImg from "../imgs/recentPolls.png";
+// import newPollImg from "../imgs/newPoll.png";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import "./home.css";
+import PollIcon from "@material-ui/icons/Poll";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 const styles = (theme) => ({
   card: {
@@ -35,15 +38,16 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent align="center">
+                <CardContent className="card" align="center">
                   <a href="/recent">
-                    <img
+                    <PollIcon
                       alt="view-polls"
-                      src={pollsImg}
                       className="icon"
-                      height="100px"
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
                     />
                   </a>
+
                   <Typography type="body1" component="h2">
                     Recent Polls
                   </Typography>
@@ -54,18 +58,16 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent align="center">
-                  <br />
-                  <br />
-
+                <CardContent lassName="card" align="center">
                   <a href="/polls">
-                    <img
+                    <AddCircleIcon
                       alt="create-poll"
-                      src={newPollImg}
                       className="icon"
-                      height="100px"
-                    />{" "}
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
+                    />
                   </a>
+
                   <Typography type="body1" component="h2">
                     Create Poll
                   </Typography>
