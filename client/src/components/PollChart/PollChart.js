@@ -4,7 +4,7 @@ import {
   Chart,
   PieSeries,
   Title,
-  Legend
+  Legend,
 } from "@devexpress/dx-react-chart-material-ui";
 
 import { Animation } from "@devexpress/dx-react-chart";
@@ -16,7 +16,7 @@ const data = [
   { optionTitle: "Joe", optionVal: 6 },
   { optionTitle: "Jacob", optionVal: 6 },
   { optionTitle: "Andrew", optionVal: 6 },
-  { optionTitle: "Angel", optionVal: 6 }
+  { optionTitle: "Angel", optionVal: 6 },
 ];
 
 export default class PollChart extends React.PureComponent {
@@ -24,7 +24,7 @@ export default class PollChart extends React.PureComponent {
     super(props);
 
     this.state = {
-      data
+      data,
     };
   }
 
@@ -37,7 +37,7 @@ export default class PollChart extends React.PureComponent {
           <PieSeries
             valueField="optionVal"
             argumentField="optionTitle"
-            Title="optionTitle"
+            title="optionTitle"
           />
           <Title text="Poll Results" />
           <Legend />

@@ -37,7 +37,12 @@ class Home extends Component {
               <Card className={classes.card}>
                 <CardContent align="center">
                   <a href="/recent">
-                    <img alt="view-polls" src={pollsImg} />
+                    <img
+                      alt="view-polls"
+                      src={pollsImg}
+                      className="icon"
+                      height="100px"
+                    />
                   </a>
                   <Typography type="body1" component="h2">
                     Recent Polls
@@ -54,7 +59,12 @@ class Home extends Component {
                   <br />
 
                   <a href="/polls">
-                    <img alt="create-poll" src={newPollImg} />{" "}
+                    <img
+                      alt="create-poll"
+                      src={newPollImg}
+                      className="icon"
+                      height="100px"
+                    />{" "}
                   </a>
                   <Typography type="body1" component="h2">
                     Create Poll
