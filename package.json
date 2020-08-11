@@ -20,6 +20,7 @@
     "@devexpress/dx-react-chart-material-ui": "2.7.0",
     "@devexpress/dx-react-core": "2.7.0",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "axios": "^0.19.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
