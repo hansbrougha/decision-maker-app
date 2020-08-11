@@ -10,7 +10,6 @@ import Signup from "./components/user/Signup";
 
 import Polls from "./components/Polls";
 import NewPoll from "./components/NewPoll";
-// import TakePoll from "./components/TakePoll/TakePoll";
 import PollChart from "./components/PollChart/PollChart";
 import Recents from "./components/Recents";
 
