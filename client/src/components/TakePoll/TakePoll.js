@@ -20,8 +20,8 @@ const User = [
         pollTitle: "Does This Work?",
         pollOptions: [
           { optionTitle: "YEA", optionVal: 1 },
-          { optionTitle: "NAH", optionVal: 23 },
-        ],
+          { optionTitle: "NAH", optionVal: 23 }
+        ]
       },
       {
         pollId: "testId2",
@@ -30,10 +30,10 @@ const User = [
           { optionTitle: "Chipotle", optionVal: 39 },
           { optionTitle: "Salad", optionVal: 10 },
           { optionTitle: "Doritos and Mnt Dew", optionVal: 3 },
-          { optionTitle: "All the above", optionVal: 73 },
-        ],
-      },
-    ],
+          { optionTitle: "All the above", optionVal: 73 }
+        ]
+      }
+    ]
   },
   {
     name: "Jane Doe",
@@ -46,8 +46,8 @@ const User = [
         pollTitle: "Should I sleep?",
         pollOptions: [
           { optionTitle: "YEA", optionVal: 4 },
-          { optionTitle: "NAH", optionVal: 17 },
-        ],
+          { optionTitle: "NAH", optionVal: 17 }
+        ]
       },
       {
         pollId: "testId4",
@@ -56,28 +56,28 @@ const User = [
           { optionTitle: "Yellow", optionVal: 3 },
           { optionTitle: "Blue", optionVal: 19 },
           { optionTitle: "Purple", optionVal: 5 },
-          { optionTitle: "Red", optionVal: 7 },
-        ],
-      },
-    ],
-  },
+          { optionTitle: "Red", optionVal: 7 }
+        ]
+      }
+    ]
+  }
 ];
 const styles = (theme) => ({
   card: {
     maxWidth: 700,
     margin: "auto",
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(5)
   },
   title: {
     padding: `${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(
       2
     )}px`,
     color: theme.palette.text.secondary,
-    fontSize: 24,
+    fontSize: 24
   },
   media: {
-    minHeight: 450,
-  },
+    minHeight: 450
+  }
 });
 function TakePoll() {
   const [value, setValue] = React.useState("female");
