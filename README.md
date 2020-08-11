@@ -1,2 +1,3 @@
-# mern-material-demo
-authentication test
+# Decision-Maker-App
+
+Poll The Room. Make a Decision.
