@@ -14,7 +14,7 @@ const router = express.Router();
 router.route("/api/users").post(registerUser);
 
 router
-  .route("/api/users/:userId")
+  .route("/api/users/:id")
   .get(requireSignin, findUserProfile)
   .delete(requireSignin, hasAuthorization, deleteUser);
 
