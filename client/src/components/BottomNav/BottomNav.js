@@ -46,6 +46,7 @@ export default function SimpleBottomNavigation() {
             label="Recents"
             icon={<RestoreIcon />}
             href="/recent"
+            size="large"
           />
           <BottomNavigationAction
             className={classes.bottomNav}

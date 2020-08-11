@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PollChart from "../PollChart/PollChart";
 import Box from "@material-ui/core/Box";
+import TakePoll from "../TakePoll/TakePoll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,15 +60,7 @@ export default function ControlledAccordions() {
           <Typography className={classes.heading}>GET Title</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            RADIO BUTTON
-            <br />
-            RADIO BUTTON
-            <br />
-            RADIO BUTTON
-            <br />
-            BUTTON BUTTON
-          </Typography>
+          <TakePoll />
         </AccordionDetails>
       </Accordion>
 

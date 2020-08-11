@@ -28,14 +28,23 @@ class Routes extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
 
-          <Route path="/addOptions" component={NewPoll} />
+          <PrivateRoutes
+            path={[process.env.PUBLIC_URL + "/addOptions"]}
+            component={NewPoll}
+          />
           {/* <Route path="/addOptions" component={NewPoll} /> */}
 
           {/* <PrivateRoutes path="/create" component={Polls} />
           <PrivateRoutes path="/recent" component={Recents} /> */}
 
-          <PrivateRoutes path="/create" component={Polls} />
-          <PrivateRoutes path="/recent" component={Recents} />
+          <PrivateRoutes
+            path={[process.env.PUBLIC_URL + "/create"]}
+            component={Polls}
+          />
+          <PrivateRoutes
+            {...[process.env.PUBLIC_URL + "/recent"]}
+            component={Recents}
+          />
 
           {/* <Route path="/:pollId" component={TakePoll} /> */}
           <Route path="/:pollId" component={PollChart} />
