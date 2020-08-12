@@ -7,7 +7,9 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PollChart from "../PollChart/PollChart";
 import Box from "@material-ui/core/Box";
-import TakePoll from "../TakePoll/TakePoll";
+// import TakePoll from "../TakePoll/TakePoll";
+import PollModal from "../PollModal/PollModal";
+import ChartModal from "../ChartModal/ChartModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +62,7 @@ export default function ControlledAccordions() {
           <Typography className={classes.heading}>GET Title</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <TakePoll />
+          <PollModal />
         </AccordionDetails>
       </Accordion>
 
@@ -79,15 +81,9 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            GET Decision Title or Question
-            <br />
-            GET Decision Result
-            <br />
+            <PollModal />
           </Typography>
         </AccordionDetails>
-        <Box>
-          <PollChart />
-        </Box>
       </Accordion>
       <Accordion
         expanded={expanded === "showStatus"}

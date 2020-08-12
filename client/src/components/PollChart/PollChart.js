@@ -19,6 +19,10 @@ const data = [
   { optionTitle: "Angel", optionVal: 6 }
 ];
 
+const style = {
+  width: "100%"
+};
+
 export default class PollChart extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -32,7 +36,7 @@ export default class PollChart extends React.PureComponent {
     const { data: chartData } = this.state;
 
     return (
-      <Paper>
+      <Paper style={style}>
         <Chart data={chartData}>
           <PieSeries
             valueField="optionVal"
