@@ -21,24 +21,21 @@ class Routes extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <PrivateRoutes path="/user/edit/:_id" />
-          <Route path="/users/:_id" component={Profile} />
+          <PrivateRoutes exact path="/user/edit/:_id" />
+          <Route exact path="/users/:_id" component={Profile} />
 
-          <Route path="/signup" component={Signup} />
-          <Route path="/signin" component={Signin} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signin" component={Signin} />
 
-          <PrivateRoutes
-            path={["%PUBLIC_URL% /addOptions"]}
-            component={NewPoll}
-          />
+          <PrivateRoutes exact path="/addOptions" component={NewPoll} />
 
-          <PrivateRoutes path={["%PUBLIC_URL% /create"]} component={Polls} />
-          <PrivateRoutes {...["%PUBLIC_URL% /recent"]} component={Recents} />
+          <PrivateRoutes exact path="/create" component={Polls} />
+          <PrivateRoutes exact path="/recent" component={Recents} />
 
           {/* <Route path="/:pollId" component={TakePoll} /> */}
-          <Route path="/:pollId" component={PollChart} />
+          <Route exact path="/:pollId" component={PollChart} />
 
-          <Route path="/:pollId/pollDisplay" component={PollDisplay} />
+          <Route exact path="/:pollId/pollDisplay" component={PollDisplay} />
         </Switch>
       </div>
     );
