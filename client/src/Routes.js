@@ -23,16 +23,12 @@ class Routes extends Component {
           <Route exact path="/" component={Home} />
           <PrivateRoutes path="/user/edit/:_id" />
           <Route path="/users/:_id" component={Profile} />
+          {/* <Route path="/users/:_id" component={MyDecisions} /> */}
 
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
 
-          <PrivateRoutes
-            path={["%PUBLIC_URL% /addOptions"]}
-            component={NewPoll}
-          />
-
-          <PrivateRoutes path={["%PUBLIC_URL% /create"]} component={Polls} />
+          <PrivateRoutes exact path={["/create"]} component={Polls} />
           <PrivateRoutes {...["%PUBLIC_URL% /recent"]} component={Recents} />
 
           {/* <Route path="/:pollId" component={TakePoll} /> */}

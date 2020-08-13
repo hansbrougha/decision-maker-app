@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CreateOptions from "./CreateOptions/CreateOptions";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const styles = (theme) => ({
@@ -29,7 +28,7 @@ class Polls extends Component {
       <div>
         <CssBaseline />
         <Card className={classes.card} align="center">
-          <CreateOptions />
+          {/* <CreateOptions /> */}
         </Card>
       </div>
     );

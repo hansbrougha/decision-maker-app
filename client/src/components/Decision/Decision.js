@@ -34,13 +34,11 @@ export default function Playground() {
             className={classes.textfield}
             label="What Would You Like To Decide?"
           />
-          <br />
-          <br />
-          <br />
           <TextField className={classes.textfield} label="How Many Deciders?" />
-          <br />
-          <br />
-          <br />
+          <TextField className={classes.textfield} label="Option 1" />
+          <TextField className={classes.textfield} label="Option 2" />
+          <TextField className={classes.textfield} label="Option 3" />
+          <TextField className={classes.textfield} label="Option 4" />
         </div>
       </center>
       <Button
@@ -48,7 +46,7 @@ export default function Playground() {
         size="large"
         color="primary"
         className={classes.button}
-        href="/addOptions"
+        href="/recents"
       >
         Create
       </Button>
