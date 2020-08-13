@@ -5,9 +5,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import PollChart from "../PollChart/PollChart";
-import Box from "@material-ui/core/Box";
-import TakePoll from "../TakePoll/TakePoll";
+// import PollChart from "../PollChart/PollChart";
+// import TakePoll from "../TakePoll/TakePoll";
+import PollModal from "../PollModal/PollModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +60,7 @@ export default function ControlledAccordions() {
           <Typography className={classes.heading}>GET Title</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <TakePoll />
+          <PollModal />
         </AccordionDetails>
       </Accordion>
 
@@ -78,16 +78,8 @@ export default function ControlledAccordions() {
           <Typography className={classes.heading}>GET Result</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            GET Decision Title or Question
-            <br />
-            GET Decision Result
-            <br />
-          </Typography>
+          <PollModal />
         </AccordionDetails>
-        <Box>
-          <PollChart />
-        </Box>
       </Accordion>
       <Accordion
         expanded={expanded === "showStatus"}
@@ -106,13 +98,8 @@ export default function ControlledAccordions() {
           <Typography>
             Decision Title or Question
             <br />
-            Decision Graph with Key
+            Your Answer: __________
             <br />
-            Your vote
-            <br />
-            <br />
-            GRAPH OR CHART. GRAPH OR CHART. GRAPH OR CHART. GRAPH OR CHART.
-            GRAPH OR CHART. GRAPH OR CHART. GRAPH OR CHART. GRAPH OR CHART.
           </Typography>
         </AccordionDetails>
       </Accordion>

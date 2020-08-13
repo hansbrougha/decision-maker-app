@@ -52,7 +52,7 @@ export default function SimpleBottomNavigation() {
             className={classes.bottomNav}
             label="My Decisions"
             icon={<PollIcon />}
-            href="/user/:id"
+            href="/users/:_id"
           />
           <BottomNavigationAction
             className={classes.bottomNav}
