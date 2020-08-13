@@ -27,6 +27,16 @@ export const findUserById = (req, res, next, id) => {
   });
 };
 
+export const findPollById = (req, res, next, id) => {
+  User.findById(id).exec((err, poll) => {
+    if (err) {
+      console.error(err);
+    }
+    req.poll = poll;
+    next();
+  });
+};
+
 export const findUserProfile = (req, res) => {
   // eliminate password related fields before sending the user object
   req.profile.hashedPassword = undefined;
@@ -46,4 +56,15 @@ export const deleteUser = (req, res, next) => {
     user.salt = undefined;
     res.json(user);
   });
+};
+
+export const getAllUsers = (req, res) => {
+  User.find(req.query)
+    .then((users) => res.json(users))
+    .catch((err) => res.status(422).json(err));
+};
+export const updatePoll = (req, res) => {
+  User.findOneAndUpdate({ _id: req.params.id }, req.body + 1)
+    .then((poll) => res.json(poll))
+    .catch((err) => res.status(422).json(err));
 };
