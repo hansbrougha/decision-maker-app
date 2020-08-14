@@ -11,14 +11,14 @@ const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
-  }
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 const Fade = React.forwardRef(function Fade(props, ref) {
@@ -35,7 +35,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
       if (!open && onExited) {
         onExited();
       }
-    }
+    },
   });
 
   return (
@@ -49,7 +49,7 @@ Fade.propTypes = {
   children: PropTypes.element,
   in: PropTypes.bool.isRequired,
   onEnter: PropTypes.func,
-  onExited: PropTypes.func
+  onExited: PropTypes.func,
 };
 
 export default function SignInModal() {
@@ -79,7 +79,7 @@ export default function SignInModal() {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500
+          timeout: 500,
         }}
       >
         <Fade in={open}>

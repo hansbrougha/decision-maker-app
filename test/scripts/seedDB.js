@@ -3,7 +3,7 @@ const db = require("../models");
 
 // This file empties the polls collection and inserts the books below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/polls");
 
 const pollSeed = [
   {

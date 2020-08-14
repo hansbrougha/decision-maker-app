@@ -16,13 +16,13 @@ const pollSchema = new Schema({
   pollTitle: { type: String },
   deciders: { type: Number, default: 100 },
   option1Title: { type: String },
-  option1Val: { type: Number },
+  option1Val: { type: Number, default: 0 },
   option2Title: { type: String },
-  option2Val: { type: Number },
+  option2Val: { type: Number, default: 0 },
   option3Title: { type: String },
-  option3Val: { type: Number },
+  option3Val: { type: Number, default: 0 },
   option4Title: { type: String },
-  option4Val: { type: Number },
+  option4Val: { type: Number, default: 0 },
   date: { type: Date, default: Date.now },
 });
 
