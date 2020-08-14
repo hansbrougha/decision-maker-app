@@ -8,11 +8,14 @@
   margin-top: 30px;
 }
 
+
 @mixin font-primary {
   font-family: 'urbane', sans-serif;
   font-weight: 300;
-  color: white; 
-  text-align: center;
+}
+
+.title {
+  @include font-primary()
 }
 
 .container {
@@ -21,6 +24,7 @@
 }
 
 body {
+  @include font-primary();
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,7 +48,7 @@ code {
 }
 
 @mixin input {
-  color: white;
+  color: #009688; 
   margin: 0 auto;
 }
 
@@ -56,5 +60,6 @@ code {
 }
 
 #submitBtn {
-
+  background-color: #009688; 
 }
+

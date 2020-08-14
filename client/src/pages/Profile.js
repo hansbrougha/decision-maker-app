@@ -15,7 +15,7 @@ import { findUserProfile } from "../utils/api-user.js";
 import { Redirect } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
 import RecentPolls from "../components/RecentPolls";
-
+import BottomNav from '../components/BottomNav'; 
 import DeleteUser from "./DeleteUser";
 
 const styles = (theme) => ({
@@ -69,6 +69,7 @@ class Profile extends Component {
       return <Redirect to="/signin" />;
     }
     return (
+      <div>
       <Paper className={classes.root} elevation={4}>
         <Typography type="title" className={classes.title}>
           Profile
@@ -95,6 +96,8 @@ class Profile extends Component {
         </List>
         <RecentPolls />
       </Paper>
+      <BottomNav />
+      </div>
     );
   }
 }

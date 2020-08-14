@@ -65,7 +65,7 @@ class Home extends Component {
 
               <Card className={classes.card}>
                 <CardContent className="card">
-                  <a href="/login">
+                  <a href="/signin">
                   <FontAwesomeIcon
                       title="Sign Up"
                       icon={['fad', 'sign-in']}

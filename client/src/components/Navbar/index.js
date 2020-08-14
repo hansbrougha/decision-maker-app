@@ -19,9 +19,9 @@ const isActive = (history, path) => {
 const Menu = withRouter(({ history }) => (
   <AppBar position="static">
     <Toolbar className='nav'>
-      <p type="title" className='logo'>
+      <Link to='/' id="logo"><p type="title" className='logo'>
         unbiased.io
-      </p>
+      </p></Link>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <Home />
@@ -29,10 +29,10 @@ const Menu = withRouter(({ history }) => (
       </Link>
       {!auth.isAuthenticated() && (
         <span>
-          <Link to="/signup">
+          <Link to="/signup" id="logo">
             <Button style={isActive(history, "/signup")}>Sign up</Button>
           </Link>
-          <Link to="/signin">
+          <Link to="/signin" id="logo">
             <Button style={isActive(history, "/signin")}>Sign In</Button>
           </Link>
         </span>

@@ -27,7 +27,7 @@ class App extends Component {
         {/* <MuiThemeProvider theme={theme}> */}
           {/* <CssBaseline /> */}
           <Routes />
-          <BottomNav />
+      
         {/* </MuiThemeProvider> */}
       </BrowserRouter>
       </div>

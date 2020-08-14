@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
 import PrivateRoutes from "./components/auth/PrivateRoutes";
-import Signin from "./components/auth/Signin";
+import Signin from "./pages/Signin";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 
@@ -22,24 +22,24 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
 
-          <PrivateRoutes exact path="/user/edit/:_id" />
-          <Route exact path="/users/:_id" component={Profile} />
+          <PrivateRoutes path="/user/edit/:_id" />
+          <Route path="/users/:_id" component={Profile} />
 
 
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/signin" component={Signin} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/signin" component={Signin} />
 
 
-          <PrivateRoutes exact path="/addOptions" component={NewPoll} />
+          <PrivateRoutes path="/addOptions" component={NewPoll} />
 
-          <PrivateRoutes exact path="/create" component={Polls} />
-          <PrivateRoutes exact path="/recent" component={Recents} />
+          <PrivateRoutes path="/create" component={Polls} />
+          <PrivateRoutes path="/recent" component={Recents} />
 
 
           {/* <Route path="/:pollId" component={TakePoll} /> */}
-          <Route exact path="/:pollId" component={PollChart} />
+          <Route path="/:pollId" component={PollChart} />
 
-          <Route exact path="/:pollId/pollDisplay" component={PollDisplay} />
+          <Route path="/:pollId/pollDisplay" component={PollDisplay} />
         </Switch>
       </div>
     );

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import RecentPolls from "../components/RecentPolls";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import BottomNav from '../components/BottomNav'; 
 
 const styles = (theme) => ({
   card: {
@@ -27,10 +27,10 @@ class Polls extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <CssBaseline />
         <Card className={classes.card} align="center">
           <RecentPolls />
         </Card>
+        <BottomNav />
       </div>
     );
   }

@@ -82,7 +82,7 @@ class Signup extends Component {
           
             <Typography
               type="headline"
-              variant="h3"
+              variant="h2"
               className={classes.title}
             >
               Sign Up
@@ -135,7 +135,7 @@ class Signup extends Component {
               className={classes.submit}
               id='submitBtn'
             >
-              Submit
+              Sign Up
             </Button>
           </CardActions>
         </Card>
