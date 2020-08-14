@@ -9,7 +9,7 @@ import PollIcon from "@material-ui/icons/Poll";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    background: theme.palette.primary.main,
+    background: '#212121',
     marginTop: "10px"
   },
   bottomNav: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%"
   },
   footer: {
-    background: theme.palette.primary.main
+    background: '#212121'
   },
   stickToBottom: {
     width: "100%",

@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 // import Deciders from "../Deciders/Deciders";
 // import Types from "../Types/Types";
-import Options from "../Options/Options";
+import Decision from "../Decision";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +35,10 @@ export default function SimpleCard() {
           color="textSecondary"
           gutterBottom
         >
-          Add Your Options
+          Create a Decision
         </Typography>
 
-        <Options />
+        <Decision />
         {/* <Deciders />
             <Types /> */}
       </CardContent>

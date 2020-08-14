@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import PollChart from "../PollChart/PollChart";
 // import TakePoll from "../TakePoll/TakePoll";
-import PollModal from "../PollModal/PollModal";
+import PollModal from "../PollModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {

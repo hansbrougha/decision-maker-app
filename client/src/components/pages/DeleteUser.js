@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core//Button";
+import Button from "@material-ui/core/Button";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContentText from "@material-ui/core/DialogContentText";

@@ -14,13 +14,13 @@ import auth from "../auth/auth-helper";
 import { findUserProfile } from "../../utils/api-user.js";
 import { Redirect } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
-import RecentPolls from "../RecentPolls/RecentPolls";
+import RecentPolls from "../RecentPolls";
 
 import DeleteUser from "./DeleteUser";
 
 const styles = (theme) => ({
   root: theme.mixins.gutters({
-    maxWidth: 600,
+    maxWidth: 200,
     margin: "auto",
     padding: theme.spacing(3),
     marginTop: theme.spacing(5),

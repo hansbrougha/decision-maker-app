@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import PollChart from "./PollChart/PollChart.js";
+import PollChart from "./PollChart/index.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const styles = (theme) => ({

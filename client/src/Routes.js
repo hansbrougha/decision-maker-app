@@ -5,12 +5,12 @@ import Home from "./components/Home";
 
 import PrivateRoutes from "./components/auth/PrivateRoutes";
 import Signin from "./components/auth/Signin";
-import Profile from "./components/user/Profile";
-import Signup from "./components/user/Signup";
+import Profile from "./components/pages/Profile";
+import Signup from "./components/pages/Signup";
 
 import Polls from "./components/Polls";
 import NewPoll from "./components/NewPoll";
-import PollChart from "./components/PollChart/PollChart";
+import PollChart from "./components/PollChart";
 import Recents from "./components/Recents";
 
 import PollDisplay from "./components/PollDisplay";

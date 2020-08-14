@@ -5,8 +5,12 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Home from "@material-ui/icons/Home";
 import Button from "@material-ui/core/Button";
-import auth from "./auth/auth-helper";
+import auth from "../auth/auth-helper";
 import { Link, withRouter } from "react-router-dom";
+
+
+import './index.scss'; 
+
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) return { color: "#ffffff" };
@@ -14,10 +18,10 @@ const isActive = (history, path) => {
 };
 const Menu = withRouter(({ history }) => (
   <AppBar position="static">
-    <Toolbar>
-      <Typography type="title" color="inherit">
-        Decision-Maker
-      </Typography>
+    <Toolbar className='nav'>
+      <p type="title" className='logo'>
+        unbiased.io
+      </p>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <Home />

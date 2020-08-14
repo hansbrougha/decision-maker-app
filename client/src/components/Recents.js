@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import RecentPolls from "./RecentPolls/RecentPolls";
+import RecentPolls from "./RecentPolls";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const styles = (theme) => ({
