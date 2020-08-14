@@ -5,5 +5,8 @@
         "mernproj",
         "mlab",
         "signin"
+    ],
+    "cSpell.ignoreWords": [
+        "mernproj"
     ]
 }

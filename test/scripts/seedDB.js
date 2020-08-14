@@ -7,29 +7,38 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
 const pollSeed = [
   {
-    title: "What is your decision?",
-    deciders: 10,
-    option1: "Decide",
-    option2: "Don't Decide",
-    option3: "Ask my mom",
-    option4: "Take a nap"
+    pollTitle: "What is your favorite color",
+    option1Title: "Red",
+    option1Val: 4,
+    option2Title: "Blue",
+    option2Val: 14,
+    option3Title: "Orange",
+    option3Val: 12,
+    option4Title: "Green",
+    option4Val: 6,
   },
   {
-    title: "What is your decision?",
-    deciders: 8,
-    option1: "Snacks",
-    option2: "Breakfast",
-    option3: "Dinner",
-    option4: "Breakfast for Dinner"
+    pollTitle: "What is the best meal of the day",
+    option1Title: "Breakfast",
+    option1Val: 12,
+    option2Title: "Lunch",
+    option2Val: 23,
+    option3Title: "Dinner",
+    option3Val: 8,
+    option4Title: "Brunch",
+    option4Val: 0,
   },
   {
-    title: "What is your decision?",
-    deciders: 4,
-    option1: "up",
-    option2: "down",
-    option3: "left",
-    option4: "right"
-  }
+    pollTitle: "What is your favorite poll application",
+    option1Title: "Decision Maker",
+    option1Val: 94,
+    option2Title: "Group 5's project 3",
+    option2Val: 114,
+    option3Title: "This one",
+    option3Val: 122,
+    option4Title: "All of the above",
+    option4Val: 56,
+  },
 ];
 
 db.Poll.remove({})

@@ -1,5 +1,8 @@
-const dbuser = process.env.DB_USER || "decision-maker-db";
-const dbpassword = process.env.DB_PASSWORD || "mernproj3";
+import dotenv from "dotenv";
+dotenv.config();
+
+const dbuser = process.env.DB_USER;
+const dbpassword = process.env.DB_PASSWORD;
 
 const config = {
   port: process.env.PORT || 4000,
