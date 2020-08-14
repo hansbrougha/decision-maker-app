@@ -30,7 +30,7 @@ router
 
 router.route("/api/users").get(getAllUsers);
 
-router.route("/api/:pollid").get(findPollById).put(updatePoll);
+router.route("/api/polls/:pollid").get(findPollById).put(updatePoll);
 
 router.param("userId", findUserById);
 
