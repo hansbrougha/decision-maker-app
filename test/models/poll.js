@@ -23,7 +23,6 @@ const pollSchema = new Schema({
   option3Val: { type: Number },
   option4Title: { type: String },
   option4Val: { type: Number },
-
   date: { type: Date, default: Date.now },
 });
 
