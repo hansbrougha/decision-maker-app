@@ -1,7 +1,7 @@
 # Decision Maker App
 
-![Languages badge](https://img.shields.io/github/languages/count/jawalton6616/decision-maker-app)
-![Last commit badge](https://img.shields.io/github/last-commit/jawalton6616/decision-maker-app)
+![Languages badge](https://img.shields.io/github/languages/count/hansbrougha/decision-maker-app)
+![Last commit badge](https://img.shields.io/github/last-commit/hansbrougha/decision-maker-app)
 
 ## Description:
 
@@ -24,12 +24,12 @@ Run "yarn i" to install necessary dependencies.
 
 ## Usage
 
-To run locally, SOMETHING
+To run locally, run "yarn start" from the root folder.
 
 ## Contributors
 
-Jacob Walton
+Andrew Hansbrough, Angel Schultz, Jacob Walton, & Joe Stutsman.
 
 ## Questions
 
-If you have any questions you can contact me at jawalton6616@gmail.com.
+
