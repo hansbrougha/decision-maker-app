@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const pollRoutes = require("./polls");
+// const router = require("express").Router();
+// const pollRoutes = require("./polls");
 
-// poll routes
-router.use("/polls", pollRoutes);
+// // poll routes
+// router.use("/polls", pollRoutes);
 
-module.exports = router;
+// module.exports = router;

@@ -8,6 +8,13 @@ import {
   getAllUsers,
   findPollById,
 } from "../controllers/user.js";
+import {
+  create,
+  findAll,
+  findById,
+  update,
+  remove,
+} from "../controllers/pollsController.js";
 
 // import them to protect routes
 import { requireSignin, hasAuthorization } from "../controllers/auth.js";
@@ -26,5 +33,18 @@ router.route("/api/users").get(getAllUsers);
 router.route("/api/:pollid").get(findPollById).put(updatePoll);
 
 router.param("userId", findUserById);
+
+router.route("/api/polls").post(create);
+
+// router
+//   .route("/api/users/:id")
+//   .get(requireSignin, findUserProfile)
+//   .delete(requireSignin, hasAuthorization, remove);
+
+router.route("/api/polls").get(findAll).post(create);
+
+router.route("/api/polls/:pollId").get(findById).put(update).delete(remove);
+
+router.param("pollId", findById);
 
 export default router;
