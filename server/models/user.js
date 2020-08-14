@@ -43,7 +43,10 @@ const userSchema = new Schema({
     { pollTitle: { type: String } },
     {
       pollOptions: [
-        { optionTitle: { type: String }, optionVal: { type: Number } },
+        { option1Title: { type: String }, option1Val: { type: Number } },
+        { option2Title: { type: String }, option2Val: { type: Number } },
+        { option3Title: { type: String }, option3Val: { type: Number } },
+        { option4Title: { type: String }, option4Val: { type: Number } },
       ],
     },
   ],
