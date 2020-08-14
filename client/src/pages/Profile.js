@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withStyles } from "@material-ui/core/styles";
+
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -10,11 +10,11 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Person from "@material-ui/icons/Person";
 import Divider from "@material-ui/core/Divider";
-import auth from "../auth/auth-helper";
-import { findUserProfile } from "../../utils/api-user.js";
+import auth from "../components/auth/auth-helper";
+import { findUserProfile } from "../utils/api-user.js";
 import { Redirect } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
-import RecentPolls from "../RecentPolls";
+import RecentPolls from "../components/RecentPolls";
 
 import DeleteUser from "./DeleteUser";
 
@@ -99,4 +99,4 @@ class Profile extends Component {
   }
 }
 
-export default withStyles(styles)(Profile);
+export default Profile;

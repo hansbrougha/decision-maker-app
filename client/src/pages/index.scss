@@ -8,7 +8,7 @@
   margin-top: 30px;
 }
 
-@mixin font-primary {
+h1, h2, h3, p {
   font-family: 'urbane', sans-serif;
   font-weight: 300;
   color: white; 
@@ -17,7 +17,6 @@
 
 .container {
   margin-top: 1em; 
-  @include font-primary(); 
 }
 
 body {
@@ -43,18 +42,6 @@ code {
   background-color: #212121;
 }
 
-@mixin input {
-  color: white;
-  margin: 0 auto;
-}
-
-#email, #name, #password   {
-  @include input();
-  @include font-primary();
-  border-bottom: #009688 1px solid; 
-  text-align: left;
-}
-
-#submitBtn {
-
+input {
+  color: white; 
 }

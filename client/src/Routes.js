@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 
 import PrivateRoutes from "./components/auth/PrivateRoutes";
 import Signin from "./components/auth/Signin";
-import Profile from "./components/pages/Profile";
-import Signup from "./components/pages/Signup";
+import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
 
-import Polls from "./components/Polls";
-import NewPoll from "./components/NewPoll";
+import Polls from "./pages/Polls";
+import NewPoll from "./pages/NewPoll";
 import PollChart from "./components/PollChart";
-import Recents from "./components/Recents";
+import Recents from "./pages/Recents";
 
-import PollDisplay from "./components/PollDisplay";
+import PollDisplay from "./pages/PollDisplay";
 class Routes extends Component {
   render() {
     return (

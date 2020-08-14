@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 // import pollsImg from "../imgs/recentPolls.png";
 // import newPollImg from "../imgs/newPoll.png";
 import Grid from "@material-ui/core/Grid";
-import "./index.scss";
+import "../components/index.scss";
 import PollIcon from "@material-ui/icons/Poll";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 

@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import Input from "@material-ui/core/Input";
 import Typography from "@material-ui/core/Typography";
 import Icon from "@material-ui/core/Icon";
 import { withStyles } from "@material-ui/core/styles";
@@ -13,33 +13,35 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogContent from "@material-ui/core/DialogContent";
 import Dialog from "@material-ui/core/Dialog";
 import { Link } from "react-router-dom";
-
-import { registerUser } from "../../utils/api-user.js";
+import { FormControl } from '@material-ui/core';
+import './index.scss'; 
+import { registerUser } from "../utils/api-user.js";
 
 const styles = (theme) => ({
+  root: {
+    color: '#ffffff'
+  },
   card: {
     maxWidth: 600,
-    margin: "auto",
+    margin: "0 auto",
     textAlign: "center",
     marginTop: theme.spacing(5),
     paddingBottom: theme.spacing(2),
+    backgroundColor: '#212121'
   },
   error: {
     verticalAlign: "middle",
   },
   title: {
-    marginTop: theme.spacing(2),
-    color: theme.palette.openTitle,
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 300,
+    margin: '0.5em 0 0.5em 0'
   },
   submit: {
     margin: "auto",
     marginBottom: theme.spacing(2),
   },
+  input: {
+    marginBottom: '1em'
+  }
 });
 
 class Signup extends Component {
@@ -74,39 +76,43 @@ class Signup extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <Card className={classes.card}>
+        <Card className={classes.card}>  
+
           <CardContent>
+          
             <Typography
               type="headline"
-              component="h2"
+              variant="h3"
               className={classes.title}
             >
               Sign Up
             </Typography>
-            <TextField
+            <Input
+              required
               id="name"
-              label="Name"
-              className={classes.textField}
+              placeholder="Name"
+              className={classes.input}
               value={this.state.name}
               onChange={this.handleChange("name")}
-              margin="normal"
+              variant='filled'
             />
             <br />
-            <TextField
+            <Input
+              required
               id="email"
               type="email"
-              label="Email"
-              className={classes.textField}
+              placeholder="Email"
+              className={classes.input}
               value={this.state.email}
               onChange={this.handleChange("email")}
-              margin="normal"
+              variant='filled'
             />
             <br />
-            <TextField
+            <Input
               id="password"
               type="password"
-              label="Password"
-              className={classes.textField}
+              placeholder="Password"
+              className={classes.input}
               value={this.state.password}
               onChange={this.handleChange("password")}
               margin="normal"
@@ -123,10 +129,11 @@ class Signup extends Component {
           </CardContent>
           <CardActions>
             <Button
-              color="primary"
+              color="#009688"
               variant="contained"
               onClick={this.clickSubmit}
               className={classes.submit}
+              id='submitBtn'
             >
               Submit
             </Button>

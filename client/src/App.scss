@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/zfa7adf.css");
 
 
-*, p {
+*, p, input, label {
     background-color: #3030; 
     font-family: 'urbane', sans-serif;
     font-weight: 300;
@@ -12,11 +12,10 @@
 body {
     margin: 0 auto; 
     width: 100%; 
+    color: white;
 }
 
-button {
-    color: #009688;
-}
+
 
 
 // .App {

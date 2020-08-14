@@ -15,25 +15,7 @@ import { fad } from '@fortawesome/pro-duotone-svg-icons'
 import Helmet from 'react-helmet'
 
 library.add(fab, fas, fad); 
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       light: "#e0e0e0",
-//       main: "#212121",
-//       dark: "#303030",
-//       contrastText: "#fff"
-//     },
-//     danger: {
-//       light: "#f56985",
-//       main: "#8C1D34",
-//       dark: "#580415",
-//       contrastText: "#000"
-//     },
-//     openTitle: "#1D8B75",
-//     protectTitle: "#1D8B50",
-//     type: "dark"
-//   }
-// });
+
 class App extends Component {
   render() {
     return (

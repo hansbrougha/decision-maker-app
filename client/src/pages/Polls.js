@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 
-import CreateDecision from "./CreateDecision";
+import CreateDecision from "../components/CreateDecision";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const styles = (theme) => ({

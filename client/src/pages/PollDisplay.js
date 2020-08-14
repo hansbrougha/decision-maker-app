@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import RecentPolls from "./RecentPolls";
+import CardContent from "@material-ui/core/CardContent";
+import PollChart from "../components/PollChart";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 const styles = (theme) => ({
@@ -28,8 +29,10 @@ class Polls extends Component {
     return (
       <div>
         <CssBaseline />
-        <Card className={classes.card} align="center">
-          <RecentPolls />
+        <Card className={classes.card}>
+          <CardContent align="center">
+            <PollChart />
+          </CardContent>
         </Card>
       </div>
     );
