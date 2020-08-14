@@ -9,7 +9,7 @@ import auth from "../auth/auth-helper";
 import { Link, withRouter } from "react-router-dom";
 
 
-import './index.scss'; 
+import '../index.scss'; 
 
 
 const isActive = (history, path) => {
