@@ -13,15 +13,17 @@ console.log("randomPollId", randomPollId());
 
 const pollSchema = new Schema({
   pollId: { type: String, default: randomPollId(), required: true },
-
   pollTitle: { type: String },
+  deciders: { type: Number, default: 100 },
+  option1Title: { type: String },
+  option1Val: { type: Number },
+  option2Title: { type: String },
+  option2Val: { type: Number },
+  option3Title: { type: String },
+  option3Val: { type: Number },
+  option4Title: { type: String },
+  option4Val: { type: Number },
 
-  pollOptions: [
-    { option1Title: { type: String }, option1Val: { type: Number } },
-    { option2Title: { type: String }, option2Val: { type: Number } },
-    { option3Title: { type: String }, option3Val: { type: Number } },
-    { option4Title: { type: String }, option4Val: { type: Number } },
-  ],
   date: { type: Date, default: Date.now },
 });
 
