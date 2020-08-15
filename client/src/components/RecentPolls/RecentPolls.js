@@ -7,6 +7,13 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PollModal from "../PollModal/PollModal";
 import API from "../../utils/poll-api";
+import TakePoll from "../TakePoll/TakePoll";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,17 +76,52 @@ export default function ControlledAccordions() {
               aria-controls="pane13bh-content"
               id="pane13bh-header"
             >
-              <Typography className={classes.heading}>
-                {options.pollTitle}
-              </Typography>
+              <h2 className={classes.heading}>{options.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
-              <PollModal />
+              <form onSubmit={""}>
+                <FormControl component="fieldset">
+                  {/* HARDCODED. NEED TO FIX */}
+                  <FormLabel component="legend">{}</FormLabel>
+                  <RadioGroup
+                    aria-label={options.pollTitle}
+                    name={options.pollTitle}
+                    value={options.pollTitle}
+                  >
+                    {/* <h1>{options.pollTitle}</h1> */}
+                    <FormControlLabel
+                      value={options.option1Title}
+                      control={<Radio />}
+                      label={options.option1Title}
+                    />
+                    <FormControlLabel
+                      value={options.option2Title}
+                      control={<Radio />}
+                      label={options.option2Title}
+                    />
+                    <FormControlLabel
+                      value={options.option3Title}
+                      control={<Radio />}
+                      label={options.option3Title}
+                    />
+                    <FormControlLabel
+                      value={options.option4Title}
+                      control={<Radio />}
+                      label={options.option4Title}
+                    />
+                    <Button type="submit" variant="contained" color="#999">
+                      Submit
+                    </Button>
+                  </RadioGroup>
+                </FormControl>
+              </form>
             </AccordionDetails>
           </Accordion>
         ))
       ) : (
-        <h1>NO POSTS YET</h1>
+        <h1>
+          NO POSTS YET.....<a href="/create">MAKE ONE!</a>
+        </h1>
       )}
     </div>
   );
