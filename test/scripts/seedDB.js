@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const db = require("../models");
+import mongoose from "mongoose";
+import db from "../models";
 
 // This file empties the polls collection and inserts the books below
 

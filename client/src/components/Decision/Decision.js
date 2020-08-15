@@ -29,10 +29,7 @@ export default function Playground() {
   const [value, setValue] = useState({
     pollTitle: "",
     deciders: "",
-    option1Title: "",
-    option2Title: "",
-    option3Title: "",
-    option4Title: "",
+    options: [],
   });
   const handleChange = (event) => {
     setValue({
@@ -42,8 +39,8 @@ export default function Playground() {
   };
 
   const handleSubmit = (event) => {
-    axios.post("/api/polls", value);
     event.preventDefault();
+    axios.post("/api/polls", value);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -65,25 +62,25 @@ export default function Playground() {
             onChange={handleChange}
             className={classes.textfield}
             label="Option 1"
-            name="option1Title"
+            name="option1"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 2"
-            name="option2Title"
+            name="options2"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 3"
-            name="option3Title"
+            name="options[2].name"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 4"
-            name="option4Title"
+            name="options[3].name"
           />
         </div>
       </center>
