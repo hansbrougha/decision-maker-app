@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let randomPollId = () => {
@@ -23,8 +24,9 @@ const pollSchema = new Schema({
   option3Val: { type: Number, default: 0 },
   option4Title: { type: String },
   option4Val: { type: Number, default: 0 },
-  date: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now }
 });
 
 const Poll = mongoose.model("Poll", pollSchema);
-export default Poll;
+
+module.exports = Poll;

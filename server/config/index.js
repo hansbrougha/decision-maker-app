@@ -1,3 +1,5 @@
+// import dotenv from "dotenv";
+//require("dotenv").config();
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -9,7 +11,7 @@ const pollConfig = {
   jwtSecret: process.env.JWT_SECRET || "mkT23j#u!45",
   mongoURI:
     process.env.MONGODB_URI ||
-    `mongodb://${dbuser}:${dbpassword}@ds241288.mlab.com:41288/heroku_1bf4z913`,
+    `mongodb://${dbuser}:${dbpassword}@ds241288.mlab.com:41288/heroku_1bf4z913`
 };
 
 export default pollConfig;
