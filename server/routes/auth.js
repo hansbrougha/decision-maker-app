@@ -1,5 +1,3 @@
-// import express from "express";
-// import { signin, signout } from "../controllers/auth.js";
 const express = require("express");
 const { signin, signout } = require("../controllers/auth.js");
 

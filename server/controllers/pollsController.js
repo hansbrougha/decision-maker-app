@@ -1,4 +1,3 @@
-// import Poll from "../models/poll.js";
 const Poll = require("../models/poll.js");
 
 // Defining methods for the pollsController
@@ -29,5 +28,5 @@ module.exports = {
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
-  }
+  },
 };

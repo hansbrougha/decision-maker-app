@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -121,9 +120,6 @@ export default function Playground() {
         className={classes.button}
         type="submit"
         disabled={open}
-        // onClick={() => {
-        //   setOpen(true);
-        // }}
       >
         Create
       </Button>
