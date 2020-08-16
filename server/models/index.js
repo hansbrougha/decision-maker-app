@@ -1,3 +1,3 @@
-module.exports = {
-  Poll: require("./poll")
-};
+// module.exports = {
+//   Poll: require("./poll")
+// };
