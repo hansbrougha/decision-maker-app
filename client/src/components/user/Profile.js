@@ -23,12 +23,12 @@ const styles = (theme) => ({
     maxWidth: 600,
     margin: "auto",
     padding: theme.spacing(3),
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(5)
   }),
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
-    color: theme.palette.protectedTitle,
-  },
+    color: theme.palette.protectedTitle
+  }
 });
 
 class Profile extends Component {
@@ -36,7 +36,7 @@ class Profile extends Component {
     super();
     this.state = {
       user: "",
-      redirectToSignin: false,
+      redirectToSignin: false
     };
     this.match = match;
   }
@@ -44,7 +44,7 @@ class Profile extends Component {
     const jwt = auth.isAuthenticated();
     findUserProfile(
       {
-        userId: userId,
+        userId: userId
       },
       { t: jwt.token }
     ).then((data) => {
@@ -60,7 +60,7 @@ class Profile extends Component {
     this.init(props.match.params.userId);
   };
   componentDidMount = () => {
-    this.init(this.match.params.userId);
+    this.init(this.match.params._id);
   };
   render() {
     const { classes } = this.props;

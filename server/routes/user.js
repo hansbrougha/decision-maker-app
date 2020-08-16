@@ -1,23 +1,43 @@
-import express from "express";
-import {
+// import express from "express";
+// import {
+//   registerUser,
+//   findUserById,
+//   findUserProfile,
+//   deleteUser,
+//   updatePoll,
+//   getAllUsers,
+//   findPollById
+// } from "../controllers/user.js";
+// import {
+//   create,
+//   findAll,
+//   findById,
+//   update,
+//   remove
+// } from "../controllers/pollsController.js";
+
+// // import them to protect routes
+// import { requireSignin, hasAuthorization } from "../controllers/auth.js";
+
+// import them to protect routes
+const { requireSignin, hasAuthorization } = require("../controllers/auth.js");
+const express = require("express");
+const {
   registerUser,
   findUserById,
   findUserProfile,
   deleteUser,
   updatePoll,
   getAllUsers,
-  findPollById,
-} from "../controllers/user.js";
-import {
+  findPollById
+} = require("../controllers/user.js");
+const {
   create,
   findAll,
   findById,
   update,
-  remove,
-} from "../controllers/pollsController.js";
-
-// import them to protect routes
-import { requireSignin, hasAuthorization } from "../controllers/auth.js";
+  remove
+} = require("../controllers/pollsController.js");
 
 const router = express.Router();
 
@@ -47,4 +67,4 @@ router.route("/api/polls/:pollId").get(findById).put(update).delete(remove);
 
 router.param("pollId", findById);
 
-export default router;
+module.exports = router;

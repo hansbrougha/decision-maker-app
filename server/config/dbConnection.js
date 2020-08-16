@@ -1,5 +1,7 @@
-import mongoose from "mongoose";
-import config from "./index.js";
+// import mongoose from "mongoose";
+// import config from "./index.js";
+const mongoose = require("mongoose");
+const config = require("./index.js");
 
 const URI = config.mongoURI;
 mongoose.connect(URI);

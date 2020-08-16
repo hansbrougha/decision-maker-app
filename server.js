@@ -1,11 +1,16 @@
-import express from "express";
-import cookieParser from "cookie-parser";
-import config from "./server/config/index.js";
-import userRoutes from "./server/routes/user.js";
-import authRoutes from "./server/routes/auth.js";
+// import express from "express";
+// import cookieParser from "cookie-parser";
+// import config from "./server/config/index.js";
+// import userRoutes from "./server/routes/user.js";
+// import authRoutes from "./server/routes/auth.js";
+// import "./server/config/dbConnection.js";
 
-// DB connection
-import "./server/config/dbConnection.js";
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const config = require("./server/config/index.js");
+const userRoutes = require("./server/routes/user.js");
+const authRoutes = require("./server/routes/auth.js");
+require("./server/config/dbConnection.js");
 
 const app = express();
 
@@ -14,8 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use("/", userRoutes);
-app.use("/", authRoutes);
 app.use("/", userRoutes);
 app.use("/", authRoutes);
 

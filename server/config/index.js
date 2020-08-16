@@ -1,4 +1,6 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+//require("dotenv").config();
+const dotenv = require("dotenv");
 dotenv.config();
 
 const dbuser = process.env.DB_USER;
@@ -12,4 +14,4 @@ const pollConfig = {
     `mongodb://${dbuser}:${dbpassword}@ds241288.mlab.com:41288/heroku_1bf4z913`,
 };
 
-export default pollConfig;
+module.exports = pollConfig;
