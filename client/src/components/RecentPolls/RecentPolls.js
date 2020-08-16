@@ -65,6 +65,7 @@ export default function ControlledAccordions() {
       {options.length ? (
         options.map((options) => (
           <Accordion
+            key={options.pollTitle}
             expanded={expanded === "showPoll"}
             onChange={handleChange("showPoll")}
             className={classes.open}
@@ -77,7 +78,8 @@ export default function ControlledAccordions() {
               <h2 className={classes.heading}>{options.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
-              <form onSubmit={""}>
+              <form>
+                {/* ADD onSubmit={}to form to include put method */}
                 <FormControl component="fieldset">
                   {/* HARDCODED. NEED TO FIX */}
                   <FormLabel component="legend">{}</FormLabel>
@@ -107,7 +109,7 @@ export default function ControlledAccordions() {
                       control={<Radio />}
                       label={options.option4Title}
                     />
-                    <Button type="submit" variant="contained" color="#999">
+                    <Button type="submit" variant="contained">
                       Submit
                     </Button>
                   </RadioGroup>

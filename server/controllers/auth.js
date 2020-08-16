@@ -1,57 +1,69 @@
-import User from "../models/user.js";
-import jwt from "jsonwebtoken";
-import expressJwt from "express-jwt";
-import config from "../config/index.js";
+// import User from "../models/user.js";
+// import jwt from "jsonwebtoken";
+// import expressJwt from "express-jwt";
+// import config from "../config/index.js";
 
-export const signin = (req, res) => {
+const User = require("../models/user.js");
+const jwt = require("jsonwebtoken");
+const expressJwt = require("express-jwt");
+const config = require("../config/index.js");
+
+const signin = (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err || !user) {
       return res.status(401).json({
-        error: "User not found",
+        error: "User not found"
       });
     }
     if (!user.authenticate(req.body.password)) {
       return res.status(401).json({
-        error: "Wrong Email or Password!",
+        error: "Wrong Email or Password!"
       });
     }
 
     const token = jwt.sign(
       {
-        _id: user._id,
+        _id: user._id
       },
       config.jwtSecret
     );
 
     res.cookie("t", token, {
-      expire: new Date() + 9999,
+      expire: new Date() + 9999
     });
 
     return res.json({
       token,
-      user: { _id: user._id, name: user.name, email: user.email },
+      user: { _id: user._id, name: user.name, email: user.email }
     });
   });
 };
 
-export const signout = (req, res) => {
+const signout = (req, res) => {
   res.clearCookie("t");
   return res.status(200).json({
-    message: "Sign out successful!",
+    message: "Sign out successful!"
   });
 };
 
-export const requireSignin = expressJwt({
+const requireSignin = expressJwt({
   secret: config.jwtSecret,
   algorithms: ["HS256"],
-  userProperty: "auth",
+  userProperty: "auth"
 });
 
-export const hasAuthorization = (req, res) => {
+const hasAuthorization = (req, res) => {
   const authorized = req.profile && req.auth && req.profile._id == req.auth._id;
   if (!authorized) {
     return res.status(403).json({
-      error: "User is not authorized!",
+      error: "User is not authorized!"
     });
   }
+};
+
+module.exports = {
+  signin,
+  signout,
+  requireSignin,
+  hasAuthorization
 };
