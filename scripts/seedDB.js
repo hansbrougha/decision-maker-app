@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 import db from "../models";
+import dotenv from "dotenv";
+dotenv.config();
 
 // This file empties the polls collection and inserts the books below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/polls");
+mongoose.connect(process.env.MONGODB_URI);
 
 const pollSeed = [
   {
