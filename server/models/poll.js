@@ -1,4 +1,3 @@
-// import mongoose from "mongoose";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -10,7 +9,6 @@ let randomPollId = () => {
       .substring(1)
   );
 };
-console.log("randomPollId", randomPollId());
 
 const pollSchema = new Schema({
   pollId: { type: String, default: randomPollId(), required: true },

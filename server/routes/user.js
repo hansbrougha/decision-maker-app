@@ -1,25 +1,3 @@
-// import express from "express";
-// import {
-//   registerUser,
-//   findUserById,
-//   findUserProfile,
-//   deleteUser,
-//   updatePoll,
-//   getAllUsers,
-//   findPollById
-// } from "../controllers/user.js";
-// import {
-//   create,
-//   findAll,
-//   findById,
-//   update,
-//   remove
-// } from "../controllers/pollsController.js";
-
-// // import them to protect routes
-// import { requireSignin, hasAuthorization } from "../controllers/auth.js";
-
-// import them to protect routes
 const { requireSignin, hasAuthorization } = require("../controllers/auth.js");
 const express = require("express");
 const {
@@ -29,14 +7,14 @@ const {
   deleteUser,
   updatePoll,
   getAllUsers,
-  findPollById
+  findPollById,
 } = require("../controllers/user.js");
 const {
   create,
   findAll,
   findById,
   update,
-  remove
+  remove,
 } = require("../controllers/pollsController.js");
 
 const router = express.Router();
@@ -55,11 +33,6 @@ router.route("/api/polls/:pollid").get(findPollById).put(updatePoll);
 router.param("userId", findUserById);
 
 router.route("/api/polls").post(create);
-
-// router
-//   .route("/api/users/:id")
-//   .get(requireSignin, findUserProfile)
-//   .delete(requireSignin, hasAuthorization, remove);
 
 router.route("/api/polls").get(findAll).post(create);
 

@@ -13,7 +13,6 @@ import Divider from "@material-ui/core/Divider";
 import auth from "../auth/auth-helper";
 import { findUserProfile } from "../../utils/api-user.js";
 import { Redirect } from "react-router-dom";
-// import { Redirect, Link } from "react-router-dom";
 import RecentPolls from "../RecentPolls/RecentPolls";
 
 import DeleteUser from "./DeleteUser";
@@ -23,12 +22,12 @@ const styles = (theme) => ({
     maxWidth: 600,
     margin: "auto",
     padding: theme.spacing(3),
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   }),
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
-    color: theme.palette.protectedTitle
-  }
+    color: theme.palette.protectedTitle,
+  },
 });
 
 class Profile extends Component {
@@ -36,7 +35,7 @@ class Profile extends Component {
     super();
     this.state = {
       user: "",
-      redirectToSignin: false
+      redirectToSignin: false,
     };
     this.match = match;
   }
@@ -44,7 +43,7 @@ class Profile extends Component {
     const jwt = auth.isAuthenticated();
     findUserProfile(
       {
-        userId: userId
+        userId: userId,
       },
       { t: jwt.token }
     ).then((data) => {

@@ -1,10 +1,3 @@
-// import express from "express";
-// import cookieParser from "cookie-parser";
-// import config from "./server/config/index.js";
-// import userRoutes from "./server/routes/user.js";
-// import authRoutes from "./server/routes/auth.js";
-// import "./server/config/dbConnection.js";
-
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const config = require("./server/config/index.js");

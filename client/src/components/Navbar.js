@@ -35,6 +35,7 @@ const Menu = withRouter(({ history }) => (
       )}
       {auth.isAuthenticated() && (
         <span>
+          Welcome {auth.isAuthenticated().user.name}!
           <Link to={"/users/" + auth.isAuthenticated().user._id}>
             <Button
               style={isActive(

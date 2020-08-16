@@ -1,5 +1,3 @@
-// import User from "../models/user.js";
-// import errorHandler from "../helpers/dbErrorHandler.js";
 const User = require("../models/user.js");
 const errorHandler = require("../helpers/dbErrorHandler.js");
 
@@ -8,11 +6,11 @@ const registerUser = (req, res, next) => {
   user.save((err, result) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        error: errorHandler.getErrorMessage(err),
       });
     }
     res.status(200).json({
-      message: "New user registered successfully!"
+      message: "New user registered successfully!",
     });
   });
 };
@@ -21,7 +19,7 @@ const findUserById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
-        error: "No user found with that credentials!"
+        error: "No user found with that credentials!",
       });
     }
     req.profile = user;
@@ -43,7 +41,7 @@ const findUserProfile = (req, res) => {
   User.findById(id).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
-        error: "No user found with that credentials!"
+        error: "No user found with that credentials!",
       });
     }
     req.profile = user;
@@ -59,7 +57,7 @@ const deleteUser = (req, res, next) => {
   user.remove((err, deletedUser) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        error: errorHandler.getErrorMessage(err),
       });
     }
     deletedUser.hashedPassword = undefined;
@@ -86,5 +84,5 @@ module.exports = {
   findUserProfile,
   deleteUser,
   getAllUsers,
-  updatePoll
+  updatePoll,
 };

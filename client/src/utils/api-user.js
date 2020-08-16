@@ -14,8 +14,6 @@ export const registerUser = (user) => {
 };
 
 export const findUserProfile = (params, credentials) => {
-  //checking userId
-
   console.log("params: " + JSON.stringify(params.userId));
   console.log("credentials: " + JSON.stringify(credentials));
 
