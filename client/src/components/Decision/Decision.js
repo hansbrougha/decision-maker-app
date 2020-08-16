@@ -4,6 +4,12 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
+import Alert from "@material-ui/lab/Alert";
+import Collapse from "@material-ui/core/Collapse";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import { Typography } from "@material-ui/core";
+import "./decision.css";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -25,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Playground() {
+  const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const [value, setValue] = useState({
     pollTitle: "",
@@ -41,11 +48,34 @@ export default function Playground() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post("/api/polls", value);
+    setOpen(true);
   };
   return (
     <form onSubmit={handleSubmit}>
       <center>
         <div style={{ width: 300 }}>
+          <Collapse in={open}>
+            <Alert
+              variant="filled"
+              severity="info"
+              action={
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setOpen(true);
+                  }}
+                >
+                  <CloseIcon fontSize="inherit" />
+                </IconButton>
+              }
+            >
+              <Typography>
+                Poll successfully created! <a href="/recent">Check it out!</a>
+              </Typography>
+            </Alert>
+          </Collapse>
           <TextField
             onChange={handleChange}
             className={classes.textfield}
@@ -90,6 +120,10 @@ export default function Playground() {
         color="primary"
         className={classes.button}
         type="submit"
+        disabled={open}
+        // onClick={() => {
+        //   setOpen(true);
+        // }}
       >
         Create
       </Button>
