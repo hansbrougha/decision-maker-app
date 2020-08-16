@@ -10,14 +10,12 @@ mongoose.connect(process.env.MONGODB_URI);
 const pollSeed = [
   {
     pollTitle: "What is your favorite color",
-    option1Title: "Red",
-    option1Val: 4,
-    option2Title: "Blue",
-    option2Val: 14,
-    option3Title: "Orange",
-    option3Val: 12,
-    option4Title: "Green",
-    option4Val: 6,
+    options: [
+      { name: "Red", value: 4 },
+      { name: "Blue", value: 14 },
+      { name: "Orange", value: 12 },
+      { name: "green", value: 6 },
+    ],
   },
   {
     pollTitle: "What is the best meal of the day",
