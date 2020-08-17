@@ -35,7 +35,12 @@ export default function Playground() {
   const [value, setValue] = useState({
     pollTitle: "",
     deciders: "",
-    options: [],
+    options: [
+      { name: "", value: "" },
+      { name: "", value: "" },
+      { name: "", value: "" },
+      { name: "", value: "" },
+    ],
   });
   const handleChange = (event) => {
     setValue({
@@ -91,25 +96,25 @@ export default function Playground() {
             onChange={handleChange}
             className={classes.textfield}
             label="Option 1"
-            name="option1"
+            name="name"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 2"
-            name="options2"
+            name="name"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 3"
-            name="options[2].name"
+            name="name"
           />
           <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="Option 4"
-            name="options[3].name"
+            name="name"
           />
         </div>
       </center>
