@@ -34,11 +34,10 @@ export default function Playground() {
   const classes = useStyles();
   const [value, setValue] = useState({
     pollTitle: "",
-    deciders: "",
-    option1Title:"",
-    option2Title:"",
-    option3Title:"",
-    option4Title:"",
+    option1Title: "",
+    option2Title: "",
+    option3Title: "",
+    option4Title: "",
   });
   const handleChange = (event) => {
     setValue({
@@ -46,7 +45,6 @@ export default function Playground() {
       [event.target.name]: event.target.value,
     });
     console.log(value);
-  };
   };
 
   const handleSubmit = (event) => {
@@ -86,32 +84,32 @@ export default function Playground() {
             label="What Would You Like To Decide?"
             name="pollTitle"
           />
-          <TextField
+          {/* <TextField
             onChange={handleChange}
             className={classes.textfield}
             label="How Many Deciders?"
             name="deciders"
-          />
+          /> */}
           <TextField
-            onChange={handleOptionChange}
+            onChange={handleChange}
             className={classes.textfield}
             label="Option 1"
             name="option1Title"
           />
           <TextField
-            onChange={handleOptionChange}
+            onChange={handleChange}
             className={classes.textfield}
             label="Option 2"
             name="option2Title"
           />
           <TextField
-            onChange={handleOptionChange}
+            onChange={handleChange}
             className={classes.textfield}
             label="Option 3"
             name="option3Title"
           />
           <TextField
-            onChange={handleOptionChange}
+            onChange={handleChange}
             className={classes.textfield}
             label="Option 4"
             name="option4Title"

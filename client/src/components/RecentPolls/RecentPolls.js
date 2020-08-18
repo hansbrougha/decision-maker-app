@@ -12,6 +12,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,8 +45,12 @@ export default function ControlledAccordions() {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  const [options, setOptions] = useState({
+  const [values, setValues] = useState({
     pollTitle: "",
+    option1Val: "",
+    option2Val: "",
+    option3Val: "",
+    option4Val: "",
   });
 
   useEffect(() => {
@@ -54,18 +59,27 @@ export default function ControlledAccordions() {
 
   function loadOptions() {
     API.getOptions()
-      .then((res) => setOptions(res.data))
+      .then((res) => setValues(res.data))
       .catch((err) => console.log(err));
+  }
+  function handleVote(event) {
+    event.preventDefault();
+    setValues({
+      ...values,
+      [JSON.parse(event.target.name) + 1]: event.target.values,
+    });
+
+    axios.put("/api/polls", values);
   }
   return (
     <div className={classes.root}>
       <Typography className={classes.heading} gutterBottom>
         Recent Polls
       </Typography>
-      {options.length ? (
-        options.map((options) => (
+      {values.length ? (
+        values.map((values) => (
           <Accordion
-            key={options.pollTitle}
+            key={values.pollTitle}
             expanded={expanded === "showPoll"}
             onChange={handleChange("showPoll")}
             className={classes.open}
@@ -75,41 +89,52 @@ export default function ControlledAccordions() {
               aria-controls="pane13bh-content"
               id="pane13bh-header"
             >
-              <h2 className={classes.heading}>{options.pollTitle}</h2>
+              <h2 className={classes.heading}>{values.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
               <form>
-                {/* ADD onSubmit={}to form to include put method */}
                 <FormControl component="fieldset">
                   {/* HARDCODED. NEED TO FIX */}
                   <FormLabel component="legend">{}</FormLabel>
                   <RadioGroup
-                    aria-label={options.pollTitle}
-                    name={options.pollTitle}
-                    value={options.pollTitle}
+                    onChange={handleChange}
+                    aria-label={values.pollTitle}
+                    name={values.pollTitle}
+                    value={values.pollTitle}
                   >
-                    {/* <h1>{options.pollTitle}</h1> */}
                     <FormControlLabel
-                      value={options.option1Title}
+                      value={values.option1Title}
+                      key={values.option1Title}
                       control={<Radio />}
-                      label={options.option1Title}
+                      label={values.option1Title}
+                      name={JSON.stringify(values.option1Val)}
                     />
                     <FormControlLabel
-                      value={options.option2Title}
+                      value={values.option2Title}
+                      key={values.option2Title}
                       control={<Radio />}
-                      label={options.option2Title}
+                      label={values.option2Title}
+                      name={JSON.stringify(values.option2Val)}
                     />
                     <FormControlLabel
-                      value={options.option3Title}
+                      value={values.option3Title}
+                      key={values.option3Title}
                       control={<Radio />}
-                      label={options.option3Title}
+                      label={values.option3Title}
+                      name={JSON.stringify(values.option3Val)}
                     />
                     <FormControlLabel
-                      value={options.option4Title}
+                      value={values.option4Title}
+                      key={values.option4Title}
                       control={<Radio />}
-                      label={options.option4Title}
+                      label={values.option4Title}
+                      name={JSON.stringify(values.option4Val)}
                     />
-                    <Button type="submit" variant="contained">
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      onClick={handleVote}
+                    >
                       Submit
                     </Button>
                   </RadioGroup>

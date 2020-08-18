@@ -13,7 +13,7 @@ let randomPollId = () => {
 const pollSchema = new Schema({
   pollId: { type: String, default: randomPollId(), required: true },
   pollTitle: { type: String },
-  deciders: { type: Number, default: 100 },
+  // deciders: { type: Number, default: 100 },
   option1Title: { type: String },
   option1Val: { type: Number, default: 0 },
   option2Title: { type: String },
