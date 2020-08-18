@@ -13,7 +13,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import Chart from "react-google-charts";
+// import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,7 +94,7 @@ export default function ControlledAccordions(theme) {
               <h2 className={classes.heading}>{values.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
-              <Chart
+              {/* <Chart
                 chartType="PieChart"
                 data={[
                   [values.pollTitle, "votes"],
@@ -110,7 +110,7 @@ export default function ControlledAccordions(theme) {
                 width={"100%"}
                 height={"300px"}
                 legend_toggle
-              />
+              /> */}
               <form>
                 <FormControl component="fieldset">
                   <FormLabel component="legend">{}</FormLabel>

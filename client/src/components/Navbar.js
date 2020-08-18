@@ -43,7 +43,7 @@ const Menu = withRouter(({ history }) => (
                 "/users/" + auth.isAuthenticated().user._id
               )}
             >
-              My Profile
+              Poll results
             </Button>
           </Link>
           <Button
