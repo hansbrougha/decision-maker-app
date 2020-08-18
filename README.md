@@ -30,6 +30,5 @@ To run locally, run "yarn start" from the root folder.
 
 Andrew Hansbrough, Angel Schultz, Jacob Walton, & Joe Stutsman.
 
-## Questions
 
 
