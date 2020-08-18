@@ -9,11 +9,8 @@ import Profile from "./components/user/Profile";
 import Signup from "./components/user/Signup";
 
 import Polls from "./components/Polls";
-import NewPoll from "./components/NewPoll";
-import PollChart from "./components/PollChart/PollChart";
 import Recents from "./components/Recents";
 
-import PollDisplay from "./components/PollDisplay";
 class Routes extends Component {
   render() {
     return (
@@ -30,10 +27,6 @@ class Routes extends Component {
 
           <Route exact path="/create" component={Polls} />
           <Route exact path="/recent" component={Recents} />
-
-          <Route exact path="/:pollId" component={PollChart} />
-
-          <Route exact path="/:pollId/pollDisplay" component={PollDisplay} />
         </Switch>
       </div>
     );
