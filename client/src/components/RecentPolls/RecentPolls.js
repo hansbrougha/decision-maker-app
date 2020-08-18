@@ -13,24 +13,30 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import Chart from "react-google-charts";
+// import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
     flexBasis: "40%",
-    flexShrink: 0
+    flexShrink: 0,
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
   open: {
-    background: theme.palette.primary.main
-  }
+    background: theme.palette.primary.main,
+  },
+  pending: {
+    background: theme.palette.danger.main,
+  },
+  closed: {
+    background: theme.palette.secondary.light,
+  },
 }));
 
 export default function ControlledAccordions(theme) {
@@ -40,9 +46,13 @@ export default function ControlledAccordions(theme) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const [value, setValue] = React.useState("");
+  const handleRadioChange = (event) => {
+    setValue(event.target.value);
+  };
 
   const [options, setOptions] = useState({
-    pollTitle: ""
+    pollTitle: "",
   });
 
   useEffect(() => {
@@ -58,7 +68,7 @@ export default function ControlledAccordions(theme) {
     event.preventDefault();
     setOptions({
       ...options,
-      [JSON.parse(event.target.name) + 1]: event.target.values
+      [JSON.parse(event.target.name) + 1]: event.target.values,
     });
 
     axios.put("/api/polls", options);
@@ -84,15 +94,31 @@ export default function ControlledAccordions(theme) {
               <h2 className={classes.heading}>{values.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
+              {/* <Chart
+                chartType="PieChart"
+                data={[
+                  [values.pollTitle, "votes"],
+                  [values.option1Title, values.option1Val],
+                  [values.option2Title, values.option2Val],
+                  [values.option3Title, values.option3Val],
+                  [values.option4Title, values.option4Val],
+                ]}
+                options={{
+                  backgroundColor: "#1D8B75",
+                }}
+                graph_id="PieChart"
+                width={"100%"}
+                height={"300px"}
+                legend_toggle
+              /> */}
               <form>
                 <FormControl component="fieldset">
-                  {/* HARDCODED. NEED TO FIX */}
                   <FormLabel component="legend">{}</FormLabel>
                   <RadioGroup
-                    onChange={handleChange}
+                    onChange={handleRadioChange}
                     aria-label={values.pollTitle}
                     name={values.pollTitle}
-                    value={values.pollTitle}
+                    value={value}
                   >
                     <FormControlLabel
                       value={values.option1Title}

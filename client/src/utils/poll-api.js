@@ -15,7 +15,7 @@ export default {
   },
   // Deletes the book with the given id
   incrementVote: function (pollId) {
-    return axios.put("/api/poll/" + pollId);
+    return axios.put("/api/polls/" + pollId);
   },
   // Saves a book to the database
   postPoll: function (pollData) {
