@@ -15,29 +15,28 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import Chart from "react-google-charts";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
     flexBasis: "40%",
-    flexShrink: 0
+    flexShrink: 0,
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
   open: {
-    background: theme.palette.primary.main
+    background: theme.palette.primary.main,
   },
   pending: {
-    background: theme.palette.danger.main
+    background: theme.palette.danger.main,
   },
   closed: {
-    background: theme.palette.secondary.light
-  }
+    background: theme.palette.secondary.light,
+  },
 }));
 
 export default function ControlledAccordions(theme) {
@@ -48,12 +47,8 @@ export default function ControlledAccordions(theme) {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const [values, setValues] = useState({
+  const [options, setOptions] = useState({
     pollTitle: "",
-    option1Val: "",
-    option2Val: "",
-    option3Val: "",
-    option4Val: "",
   });
 
   useEffect(() => {
@@ -62,25 +57,25 @@ export default function ControlledAccordions(theme) {
 
   function loadOptions() {
     API.getOptions()
-      .then((res) => setValues(res.data))
+      .then((res) => setOptions(res.data))
       .catch((err) => console.log(err));
   }
   function handleVote(event) {
     event.preventDefault();
-    setValues({
-      ...values,
+    setOptions({
+      ...options,
       [JSON.parse(event.target.name) + 1]: event.target.values,
     });
 
-    axios.put("/api/polls", values);
+    axios.put("/api/polls", options);
   }
   return (
     <div className={classes.root}>
       <Typography className={classes.heading} gutterBottom>
         Recent Polls
       </Typography>
-      {values.length ? (
-        values.map((values) => (
+      {options.length ? (
+        options.map((values) => (
           <Accordion
             key={values.pollTitle}
             expanded={expanded === "showPoll"}
@@ -98,14 +93,14 @@ export default function ControlledAccordions(theme) {
               <Chart
                 chartType="PieChart"
                 data={[
-                  [options.pollTitle, "votes"],
-                  [options.option1Title, options.option1Val],
-                  [options.option2Title, options.option2Val],
-                  [options.option3Title, options.option3Val],
-                  [options.option4Title, options.option4Val]
+                  [values.pollTitle, "votes"],
+                  [values.option1Title, values.option1Val],
+                  [values.option2Title, values.option2Val],
+                  [values.option3Title, values.option3Val],
+                  [values.option4Title, values.option4Val],
                 ]}
                 options={{
-                  backgroundColor: "#1D8B75"
+                  backgroundColor: "#1D8B75",
                 }}
                 graph_id="PieChart"
                 width={"100%"}
