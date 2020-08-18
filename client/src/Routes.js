@@ -22,21 +22,15 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
 
-          <PrivateRoutes exact path="/user/edit/:_id" />
+          <Route exact path="/user/edit/:_id" />
           <Route exact path="/users/:_id" component={Profile} />
-
 
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/signin" component={Signin} />
 
+          <Route exact path="/create" component={Polls} />
+          <Route exact path="/recent" component={Recents} />
 
-          <PrivateRoutes exact path="/addOptions" component={NewPoll} />
-
-          <PrivateRoutes exact path="/create" component={Polls} />
-          <PrivateRoutes exact path="/recent" component={Recents} />
-
-
-          {/* <Route path="/:pollId" component={TakePoll} /> */}
           <Route exact path="/:pollId" component={PollChart} />
 
           <Route exact path="/:pollId/pollDisplay" component={PollDisplay} />

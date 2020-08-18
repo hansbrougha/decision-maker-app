@@ -13,38 +13,41 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
+import Chart from "react-google-charts";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: "100%"
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
     flexBasis: "40%",
-    flexShrink: 0,
+    flexShrink: 0
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary
   },
   open: {
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.main
   },
   pending: {
-    background: theme.palette.danger.main,
+    background: theme.palette.danger.main
   },
   closed: {
-    background: theme.palette.secondary.light,
-  },
+    background: theme.palette.secondary.light
+  }
 }));
 
-export default function ControlledAccordions() {
+export default function ControlledAccordions(theme) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
   const [values, setValues] = useState({
     pollTitle: "",
     option1Val: "",
@@ -92,6 +95,23 @@ export default function ControlledAccordions() {
               <h2 className={classes.heading}>{values.pollTitle}</h2>
             </AccordionSummary>
             <AccordionDetails>
+              <Chart
+                chartType="PieChart"
+                data={[
+                  [options.pollTitle, "votes"],
+                  [options.option1Title, options.option1Val],
+                  [options.option2Title, options.option2Val],
+                  [options.option3Title, options.option3Val],
+                  [options.option4Title, options.option4Val]
+                ]}
+                options={{
+                  backgroundColor: "#1D8B75"
+                }}
+                graph_id="PieChart"
+                width={"100%"}
+                height={"300px"}
+                legend_toggle
+              />
               <form>
                 <FormControl component="fieldset">
                   {/* HARDCODED. NEED TO FIX */}
