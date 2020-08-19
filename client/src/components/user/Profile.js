@@ -50,7 +50,6 @@ class Profile extends Component {
         this.setState({ user: data });
       }
     });
-    console.log("jwt: " + JSON.stringify(jwt));
   };
   componentDidUpdate = (props) => {
     this.init(props.match.params.userId);
