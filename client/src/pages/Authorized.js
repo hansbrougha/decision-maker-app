@@ -29,6 +29,11 @@ const styles = (theme) => ({
   
   });
 
+  const isActive = (history, path) => {
+    if (history.location.pathname === path) return { color: "#009688" };
+    else return { color: "#ffffff" };
+  };
+
 class Authorized extends Component {
     render() {
         const { classes } = this.props;
@@ -62,6 +67,7 @@ class Authorized extends Component {
                       title="My Profile"
                       icon={['fad', 'file-user']}
                       className={classes.icon}
+                      onClick={isActive}
                     />
                   </a>
 
@@ -93,6 +99,7 @@ class Authorized extends Component {
           </Grid>
           <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
         </Grid>
+        <BottomNav />
             </div>
         );
     }

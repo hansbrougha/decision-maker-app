@@ -17,12 +17,14 @@ const isActive = (history, path) => {
   else return { color: "#ffffff" };
 };
 const Menu = withRouter(({ history }) => (
-  <AppBar position='static'>
-    <Toolbar className='nav'>
-      <Link to='/' id='logo'><p type="title" id='logo'>
+  <AppBar position='static'className='nav'>
+    <Link to='/' className='nav' id='logo'><p type="title" id='logo'>
         unbiased.io
-      </p></Link>
-     
+      </p>
+      </Link>
+    <Toolbar className='nav'>
+      
+     <br />
       {!auth.isAuthenticated() && (
         <span className='navbar'>
            <Link to="/" className='navItem'>
