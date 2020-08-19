@@ -6,7 +6,8 @@ const authRoutes = require("./server/routes/auth.js");
 const pollsRoutes = require("./server/routes/polls.js");
 
 require("./server/config/dbConnection.js");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const app = express();
 
 // middleware functions
@@ -25,6 +26,6 @@ app.use((err, req, res, next) => {
   }
 });
 
-app.listen(config.port, () => {
+app.listen(process.env.PORT || 4000, function () {
   console.log(`🚀 at port ${config.port}`);
 });
