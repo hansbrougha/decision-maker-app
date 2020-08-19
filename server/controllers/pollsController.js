@@ -9,7 +9,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    Poll.findById(req.params.pollid)
+    Poll.findById(req.params.pollId)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
