@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "MERN stack auth demo with Material UI.",
   "main": "server.js",
-
+  "engines": {
+    "node": "13.8.0",
+    "yarn": "1.22.0"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "server": "nodemon index.js --ignore client",
@@ -11,7 +14,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node test/scripts/seedDB.js",
-    "install": "cd client && npm inst all",
+    "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
