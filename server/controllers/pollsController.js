@@ -9,12 +9,13 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
+    console.log(req.params.pollId);
     Poll.findById(req.params.pollId)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findPollById: function (req, res) {
-    Poll.findById(req.params.pollId)
+    Poll.findById("pollId" + req.params.pollId)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -24,7 +25,8 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    Poll.findOneAndUpdate({ _id: req.params }, req.body)
+    console.log("update controller");
+    Poll.findOneAndUpdate({ _id: req.params.pollId }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

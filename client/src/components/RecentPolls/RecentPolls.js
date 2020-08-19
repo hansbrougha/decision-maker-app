@@ -37,26 +37,26 @@ const useStyles = makeStyles((theme) => ({
 const PollItem = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [poll, setPoll] = useState(props.poll);
-
+  const [selected, setSelected] = useState();
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  const [value, setValue] = React.useState("");
   const handleRadioChange = (event) => {
-    setValue(event.target.value);
+    console.log(event.target.name);
+    console.log(props.poll);
+    setSelected(event.target.name);
   };
 
   const classes = useStyles();
-  //add POLL_id to api route
-  function handleVote(event) {
-    event.preventDefault();
+  function handleVote(event, data) {
+    const votes = poll[selected]++;
     const newPoll = {
       ...poll,
-      [event.target.name]: +poll[event.target.name] + 1,
+      [event.target.name]: votes,
     };
     setPoll(newPoll);
-
-    axios.put("/api/polls/" + poll.pollId, newPoll);
+    console.log(newPoll);
+    axios.put("/api/polls/" + poll._id, newPoll);
   }
   return (
     <Accordion
@@ -81,7 +81,6 @@ const PollItem = (props) => {
               onChange={handleRadioChange}
               aria-label={poll.pollTitle}
               name={poll.pollTitle}
-              value={value}
             >
               <FormControlLabel
                 value={poll.option1Title}
@@ -147,7 +146,9 @@ export default function ControlledAccordions(theme) {
       </Typography>
       {options.length ? (
 
-        options.map((poll, index) => <PollItem poll={poll} index={index} />)
+        options.map((poll, index) => (
+          <PollItem poll={poll} index={index} key={poll.pollTitle} />
+        ))
 
       ) : (
         <h1>
