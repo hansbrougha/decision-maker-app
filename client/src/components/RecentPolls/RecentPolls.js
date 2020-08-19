@@ -13,7 +13,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-// import Chart from "react-google-charts";
+import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
   open: {
     background: theme.palette.primary.main,
   },
-
 }));
 
 const PollItem = (props) => {
@@ -42,8 +41,6 @@ const PollItem = (props) => {
     setExpanded(isExpanded ? panel : false);
   };
   const handleRadioChange = (event) => {
-    console.log(event.target.name);
-    console.log(props.poll);
     setSelected(event.target.name);
   };
 
@@ -55,7 +52,7 @@ const PollItem = (props) => {
       [event.target.name]: votes,
     };
     setPoll(newPoll);
-    console.log(newPoll);
+
     axios.put("/api/polls/" + poll._id, newPoll);
   }
   return (
@@ -126,7 +123,6 @@ export default function ControlledAccordions(theme) {
 
   const [options, setOptions] = useState([]);
 
-
   useEffect(() => {
     loadOptions();
   }, []);
@@ -137,19 +133,15 @@ export default function ControlledAccordions(theme) {
       .catch((err) => console.log(err));
   }
 
-
-  console.log(options);
   return (
     <div className={classes.root}>
       <Typography className={classes.heading} gutterBottom>
         Recent Polls
       </Typography>
       {options.length ? (
-
         options.map((poll, index) => (
           <PollItem poll={poll} index={index} key={poll.pollTitle} />
         ))
-
       ) : (
         <h1>
           NO POSTS YET.....<a href="/create">MAKE ONE!</a>
