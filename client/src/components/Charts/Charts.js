@@ -6,7 +6,6 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import API from "../../utils/poll-api";
-import axios from "axios";
 import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,15 +47,7 @@ export default function ControlledAccordions(theme) {
       .then((res) => setOptions(res.data))
       .catch((err) => console.log(err));
   }
-  function handleVote(event) {
-    event.preventDefault();
-    setOptions({
-      ...options,
-      [JSON.parse(event.target.name) + 1]: event.target.values,
-    });
 
-    axios.put("/api/polls", options);
-  }
   return (
     <div className={classes.root}>
       <Typography className={classes.heading} gutterBottom>

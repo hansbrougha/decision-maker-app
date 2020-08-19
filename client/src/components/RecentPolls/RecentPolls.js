@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   open: {
     background: theme.palette.primary.main,
   },
+
 }));
 
 const PollItem = (props) => {
@@ -125,6 +126,7 @@ export default function ControlledAccordions(theme) {
 
   const [options, setOptions] = useState([]);
 
+
   useEffect(() => {
     loadOptions();
   }, []);
@@ -135,6 +137,7 @@ export default function ControlledAccordions(theme) {
       .catch((err) => console.log(err));
   }
 
+
   console.log(options);
   return (
     <div className={classes.root}>
@@ -142,9 +145,11 @@ export default function ControlledAccordions(theme) {
         Recent Polls
       </Typography>
       {options.length ? (
+
         options.map((poll, index) => (
           <PollItem poll={poll} index={index} key={poll.pollTitle} />
         ))
+
       ) : (
         <h1>
           NO POSTS YET.....<a href="/create">MAKE ONE!</a>
