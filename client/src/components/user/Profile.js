@@ -3,12 +3,9 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import Person from "@material-ui/icons/Person";
 import Divider from "@material-ui/core/Divider";
 import auth from "../auth/auth-helper";
 import { findUserProfile } from "../../utils/api-user.js";
@@ -22,12 +19,12 @@ const styles = (theme) => ({
     maxWidth: 600,
     margin: "auto",
     padding: theme.spacing(3),
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   }),
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
-    color: theme.palette.protectedTitle
-  }
+    color: theme.palette.protectedTitle,
+  },
 });
 
 class Profile extends Component {
@@ -35,7 +32,7 @@ class Profile extends Component {
     super();
     this.state = {
       user: "",
-      redirectToSignin: false
+      redirectToSignin: false,
     };
     this.match = match;
   }
@@ -43,7 +40,7 @@ class Profile extends Component {
     const jwt = auth.isAuthenticated();
     findUserProfile(
       {
-        userId: userId
+        userId: userId,
       },
       { t: jwt.token }
     ).then((data) => {
@@ -53,7 +50,6 @@ class Profile extends Component {
         this.setState({ user: data });
       }
     });
-    console.log("jwt: " + JSON.stringify(jwt));
   };
   componentDidUpdate = (props) => {
     this.init(props.match.params.userId);
