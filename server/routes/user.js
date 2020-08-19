@@ -9,13 +9,6 @@ const {
   getAllUsers,
   findPollById,
 } = require("../controllers/user.js");
-const {
-  create,
-  findAll,
-  findById,
-  update,
-  remove,
-} = require("../controllers/pollsController.js");
 
 const router = express.Router();
 
@@ -27,17 +20,5 @@ router
   .delete(requireSignin, hasAuthorization, deleteUser);
 
 router.route("/api/users").get(getAllUsers);
-
-router.route("/api/polls/:pollid").get(findPollById).put(updatePoll);
-
-router.param("userId", findUserById);
-
-router.route("/api/polls").post(create);
-
-router.route("/api/polls").get(findAll).post(create);
-
-router.route("/api/polls/:pollId").get(findById).put(update).delete(remove);
-
-router.param("pollId", findById);
 
 module.exports = router;

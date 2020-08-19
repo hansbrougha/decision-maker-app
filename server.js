@@ -3,6 +3,8 @@ const cookieParser = require("cookie-parser");
 const config = require("./server/config/index.js");
 const userRoutes = require("./server/routes/user.js");
 const authRoutes = require("./server/routes/auth.js");
+const pollsRoutes = require("./server/routes/polls.js");
+
 require("./server/config/dbConnection.js");
 
 const app = express();
@@ -14,6 +16,7 @@ app.use(cookieParser());
 
 app.use("/", userRoutes);
 app.use("/", authRoutes);
+app.use("/", pollsRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
