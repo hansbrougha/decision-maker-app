@@ -52,7 +52,27 @@ const ChartItem = (props) => {
         <h2 className={classes.heading}>{poll.pollTitle}</h2>
       </AccordionSummary>
       <AccordionDetails>
-        <Chart
+        <h3>{poll.pollTitle}</h3>
+        <br />
+        <ul>
+          <li>
+            {poll.option1Title} ----- {poll.option1Val}
+          </li>
+          <br />
+          <li>
+            {poll.option2Title} ----- {poll.option2Val}
+          </li>
+          <br />
+          <li>
+            {poll.option3Title} ----- {poll.option3Val}
+          </li>
+          <br />
+          <li>
+            {poll.option4Title} ----- {poll.option4Val}
+          </li>
+          <br />
+        </ul>
+        {/* <Chart
           chartType="PieChart"
           data={[
             [poll.pollTitle, "votes"],
@@ -68,7 +88,7 @@ const ChartItem = (props) => {
           width={"100%"}
           height={"300px"}
           legend_toggle
-        />
+        /> */}
       </AccordionDetails>
     </Accordion>
   );
