@@ -7,7 +7,7 @@ import PrivateRoutes from "./components/auth/PrivateRoutes";
 import Signin from "./pages/Signin";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
-
+import Authorized from './pages/Authorized'
 import Polls from "./pages/Polls";
 import NewPoll from "./pages/NewPoll";
 import PollChart from "./components/PollChart";
@@ -30,6 +30,7 @@ class Routes extends Component {
           <Route path="/signin" component={Signin} />
 
 
+          <PrivateRoutes path="/main" component={Authorized} />
           <PrivateRoutes path="/addOptions" component={NewPoll} />
 
           <PrivateRoutes path="/create" component={Polls} />

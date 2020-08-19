@@ -22,15 +22,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary
   },
-  open: {
-    background: theme.palette.primary.main
-  },
-  pending: {
-    background: theme.palette.danger.main
-  },
-  closed: {
-    background: theme.palette.secondary.light
-  }
+  // open: {
+  //   background: theme.palette.primary.main
+  // },
+  // pending: {
+  //   background: theme.palette.danger.main
+  // },
+  // closed: {
+  //   background: theme.palette.secondary.light
+  // }
 }));
 
 export default function ControlledAccordions() {

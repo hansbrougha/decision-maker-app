@@ -4,10 +4,6 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typography from "@material-ui/core/Typography";
-
-//https://www.iconshock.com/
-// import pollsImg from "../imgs/recentPolls.png";
-// import newPollImg from "../imgs/newPoll.png";
 import Grid from "@material-ui/core/Grid";
 import "../components/index.scss";
 import PollIcon from "@material-ui/icons/Poll";

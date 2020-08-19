@@ -13,33 +13,39 @@ import '../index.scss';
 
 
 const isActive = (history, path) => {
-  if (history.location.pathname === path) return { color: "#ffffff" };
+  if (history.location.pathname === path) return { color: "#009688" };
   else return { color: "#ffffff" };
 };
 const Menu = withRouter(({ history }) => (
-  <AppBar position="static">
+  <AppBar position='static'>
     <Toolbar className='nav'>
-      <Link to='/' id="logo"><p type="title" className='logo'>
+      <Link to='/' id='logo'><p type="title" id='logo'>
         unbiased.io
       </p></Link>
-      <Link to="/">
+     
+      {!auth.isAuthenticated() && (
+        <span className='navbar'>
+           <Link to="/" className='navItem'>
         <IconButton aria-label="Home" style={isActive(history, "/")}>
           <Home />
         </IconButton>
-      </Link>
-      {!auth.isAuthenticated() && (
-        <span>
-          <Link to="/signup" id="logo">
+          </Link>
+          <Link to="/signup" className='navItem'>
             <Button style={isActive(history, "/signup")}>Sign up</Button>
           </Link>
-          <Link to="/signin" id="logo">
+          <Link to="/signin">
             <Button style={isActive(history, "/signin")}>Sign In</Button>
           </Link>
         </span>
       )}
       {auth.isAuthenticated() && (
-        <span>
-          <Link to={"/users/" + auth.isAuthenticated().user._id}>
+        <span className='navbar'>
+           <Link to="/main" className='navItem'>
+        <IconButton aria-label="Home" style={isActive(history, "/main")}>
+          <Home />
+        </IconButton>
+        </Link>
+          <Link to={"/users/" + auth.isAuthenticated().user._id} className='navItem'>
             <Button
               style={isActive(
                 history,
@@ -49,14 +55,16 @@ const Menu = withRouter(({ history }) => (
               My Profile
             </Button>
           </Link>
+          <Link to='/' className='navItem'>
           <Button
-            color="inherit"
+            color='inherit'
             onClick={() => {
               auth.signout(() => history.push("/"));
             }}
           >
             Sign out
           </Button>
+          </Link>
         </span>
       )}
     </Toolbar>

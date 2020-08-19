@@ -17,14 +17,15 @@ import { Redirect } from "react-router-dom";
 import RecentPolls from "../components/RecentPolls";
 import BottomNav from '../components/BottomNav'; 
 import DeleteUser from "./DeleteUser";
+import { withStyles } from "@material-ui/core";
 
 const styles = (theme) => ({
-  root: theme.mixins.gutters({
+  root: {
     maxWidth: 200,
     margin: "auto",
     padding: theme.spacing(3),
     marginTop: theme.spacing(5),
-  }),
+  },
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.protectedTitle,
@@ -102,4 +103,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default withStyles(styles)(Profile);

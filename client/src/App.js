@@ -12,6 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fad } from '@fortawesome/pro-duotone-svg-icons'
+import Footer from './components/Footer'
 import Helmet from 'react-helmet'
 
 library.add(fab, fas, fad); 
@@ -30,6 +31,7 @@ class App extends Component {
       
         {/* </MuiThemeProvider> */}
       </BrowserRouter>
+      <Footer />
       </div>
     );
   }

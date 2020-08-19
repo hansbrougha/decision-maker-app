@@ -4,23 +4,29 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper"
 import BottomNav from "../BottomNav";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    // marginTop: theme.spacing(8),
-    padding: theme.spacing(6, 0),
-    background: theme.palette.primary.dark,
-    color: theme.palette.primary.light
-  }
-}));
+import '../index.scss'; 
 
-export default function Footer(props) {
-  const classes = useStyles();
+// const useStyles = makeStyles((theme) => ({
+//   footer: {
+//     width: '100%',
+//     height: '3em', 
+//     padding: theme.spacing(6, 0),
+//     background: '#212121',
+//     position: 
+//   }
+// }));
+
+export default function Footer() {
+
 
   return (
-    <footer>
-      <BottomNav className={classes.footer} />
+    <footer className='footer'>
+       <Link to='/' className="navLink" id='logo'><p type="title" id='logo'>
+        unbiased.io
+      </p></Link>
     </footer>
   );
 }
