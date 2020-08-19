@@ -13,7 +13,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import Chart from "react-google-charts";
+// import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   open: {
     background: theme.palette.primary.main,
   },
+
 }));
 
 const PollItem = (props) => {
@@ -44,6 +45,7 @@ const PollItem = (props) => {
   const handleRadioChange = (event) => {
     setValue(event.target.value);
   };
+
   const classes = useStyles();
   //add POLL_id to api route
   function handleVote(event) {
@@ -125,6 +127,7 @@ export default function ControlledAccordions(theme) {
 
   const [options, setOptions] = useState([]);
 
+
   useEffect(() => {
     loadOptions();
   }, []);
@@ -135,6 +138,7 @@ export default function ControlledAccordions(theme) {
       .catch((err) => console.log(err));
   }
 
+
   console.log(options);
   return (
     <div className={classes.root}>
@@ -142,7 +146,9 @@ export default function ControlledAccordions(theme) {
         Recent Polls
       </Typography>
       {options.length ? (
+
         options.map((poll, index) => <PollItem poll={poll} index={index} />)
+
       ) : (
         <h1>
           NO POSTS YET.....<a href="/create">MAKE ONE!</a>

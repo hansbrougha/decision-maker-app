@@ -6,25 +6,24 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import API from "../../utils/poll-api";
-import axios from "axios";
 import Chart from "react-google-charts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
     flexBasis: "40%",
-    flexShrink: 0
+    flexShrink: 0,
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
   },
   open: {
-    background: theme.palette.primary.main
-  }
+    background: theme.palette.primary.main,
+  },
 }));
 
 export default function ControlledAccordions(theme) {
@@ -36,7 +35,7 @@ export default function ControlledAccordions(theme) {
   };
 
   const [options, setOptions] = useState({
-    pollTitle: ""
+    pollTitle: "",
   });
 
   useEffect(() => {
@@ -48,15 +47,7 @@ export default function ControlledAccordions(theme) {
       .then((res) => setOptions(res.data))
       .catch((err) => console.log(err));
   }
-  function handleVote(event) {
-    event.preventDefault();
-    setOptions({
-      ...options,
-      [JSON.parse(event.target.name) + 1]: event.target.values
-    });
 
-    axios.put("/api/polls", options);
-  }
   return (
     <div className={classes.root}>
       <Typography className={classes.heading} gutterBottom>
@@ -85,10 +76,10 @@ export default function ControlledAccordions(theme) {
                   [values.option1Title, values.option1Val],
                   [values.option2Title, values.option2Val],
                   [values.option3Title, values.option3Val],
-                  [values.option4Title, values.option4Val]
+                  [values.option4Title, values.option4Val],
                 ]}
                 options={{
-                  backgroundColor: "#1D8B75"
+                  backgroundColor: "#1D8B75",
                 }}
                 graph_id="PieChart"
                 width={"100%"}
