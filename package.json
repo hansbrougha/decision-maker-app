@@ -14,7 +14,7 @@
     "client": "cd client && npm run start",
     "seed": "node test/scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run build --host 127.0.0.1",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
