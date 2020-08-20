@@ -19,6 +19,10 @@ app.use("/", userRoutes);
 app.use("/", authRoutes);
 app.use("/", pollsRoutes);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname + "/../dist/index.html"));
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
