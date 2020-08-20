@@ -4,8 +4,8 @@
   "description": "MERN stack auth demo with Material UI.",
   "main": "server.js",
   "engines": {
-    "node": "13.8.0",
-    "yarn": "1.22.0"
+    "node": "13.7.0",
+    "yarn": "1.22.4"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
