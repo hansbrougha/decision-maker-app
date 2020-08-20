@@ -52,7 +52,7 @@ const ChartItem = (props) => {
         <h2 className={classes.heading}>{poll.pollTitle}</h2>
       </AccordionSummary>
       <AccordionDetails>
-        <h3>{poll.pollTitle}</h3>
+        {/* <h3>{poll.pollTitle}</h3>
         <br />
         <ul>
           <li>
@@ -71,7 +71,33 @@ const ChartItem = (props) => {
             {poll.option4Title} ----- {poll.option4Val}
           </li>
           <br />
-        </ul>
+        </ul> */}
+
+        <Chart
+          className="chart"
+          width={"100%"}
+          height={"250px"}
+          chartType="PieChart"
+          loader={
+            <h2>
+              <em>Loading results!</em>
+            </h2>
+          }
+          data={[
+            [poll.pollTitle, "Total votes"],
+            [poll.option1Title, poll.option1Val],
+            [poll.option2Title, poll.option2Val],
+            [poll.option3Title, poll.option3Val],
+            [poll.option4Title, poll.option4Val],
+          ]}
+          options={{
+            titleTextStyle: { color: "#FFF" },
+            legendTextStyle: { color: "#FFF", fontSize: 20 },
+            backgroundColor: "",
+            // title: poll.pollTitle,
+            is3D: true,
+          }}
+        />
         {/* <Chart
           chartType="PieChart"
           data={[
