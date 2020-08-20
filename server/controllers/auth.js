@@ -1,9 +1,9 @@
-import User from "../models/user.js";
-import jwt from "jsonwebtoken";
-import expressJwt from "express-jwt";
-import config from "../config/index.js";
+const User = require("../models/user.js");
+const jwt = require("jsonwebtoken");
+const expressJwt = require("express-jwt");
+const config = require("../config/index.js");
 
-export const signin = (req, res) => {
+const signin = (req, res) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err || !user) {
       return res.status(401).json({
@@ -34,24 +34,31 @@ export const signin = (req, res) => {
   });
 };
 
-export const signout = (req, res) => {
+const signout = (req, res) => {
   res.clearCookie("t");
   return res.status(200).json({
     message: "Sign out successful!",
   });
 };
 
-export const requireSignin = expressJwt({
+const requireSignin = expressJwt({
   secret: config.jwtSecret,
-  algorithms: ["RS256"],
+  algorithms: ["HS256"],
   userProperty: "auth",
 });
 
-export const hasAuthorization = (req, res) => {
+const hasAuthorization = (req, res) => {
   const authorized = req.profile && req.auth && req.profile._id == req.auth._id;
   if (!authorized) {
     return res.status(403).json({
       error: "User is not authorized!",
     });
   }
+};
+
+module.exports = {
+  signin,
+  signout,
+  requireSignin,
+  hasAuthorization,
 };

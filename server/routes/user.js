@@ -1,23 +1,24 @@
-import express from "express";
-import {
+const { requireSignin, hasAuthorization } = require("../controllers/auth.js");
+const express = require("express");
+const {
   registerUser,
   findUserById,
   findUserProfile,
   deleteUser,
-} from "../controllers/user.js";
-
-// import them to protect routes
-import { requireSignin, hasAuthorization } from "../controllers/auth.js";
+  updatePoll,
+  getAllUsers,
+  findPollById,
+} = require("../controllers/user.js");
 
 const router = express.Router();
 
 router.route("/api/users").post(registerUser);
 
 router
-  .route("/api/users/:userId")
+  .route("/api/users/:id")
   .get(requireSignin, findUserProfile)
   .delete(requireSignin, hasAuthorization, deleteUser);
 
-router.param("userId", findUserById);
+router.route("/api/users").get(getAllUsers);
 
-export default router;
+module.exports = router;

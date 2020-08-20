@@ -1,7 +1,7 @@
-import User from "../models/user.js";
-import errorHandler from "../helpers/dbErrorHandler.js";
+const User = require("../models/user.js");
+const errorHandler = require("../helpers/dbErrorHandler.js");
 
-export const registerUser = (req, res, next) => {
+const registerUser = (req, res, next) => {
   const user = new User(req.body);
   user.save((err, result) => {
     if (err) {
@@ -15,7 +15,7 @@ export const registerUser = (req, res, next) => {
   });
 };
 
-export const findUserById = (req, res, next, id) => {
+const findUserById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
@@ -27,14 +27,32 @@ export const findUserById = (req, res, next, id) => {
   });
 };
 
-export const findUserProfile = (req, res) => {
-  // eliminate password related fields before sending the user object
-  req.profile.hashedPassword = undefined;
-  req.profile.salt = undefined;
-  return res.json(req.profile);
+const findPollById = (req, res, next, id) => {
+  User.findById(id).exec((err, poll) => {
+    if (err) {
+      console.error(err);
+    }
+    req.poll = poll;
+    next();
+  });
 };
 
-export const deleteUser = (req, res, next) => {
+const findUserProfile = (req, res) => {
+  User.findById(id).exec((err, user) => {
+    if (err || !user) {
+      return res.status(400).json({
+        error: "No user found with that credentials!",
+      });
+    }
+    req.profile = user;
+
+    req.profile.hashedPassword = undefined;
+    req.profile.salt = undefined;
+    next();
+  });
+};
+
+const deleteUser = (req, res, next) => {
   let user = req.profile;
   user.remove((err, deletedUser) => {
     if (err) {
@@ -46,4 +64,25 @@ export const deleteUser = (req, res, next) => {
     user.salt = undefined;
     res.json(user);
   });
+};
+
+const getAllUsers = (req, res) => {
+  User.find(req.query)
+    .then((users) => res.json(users))
+    .catch((err) => res.status(422).json(err));
+};
+const updatePoll = (req, res) => {
+  User.findOneAndUpdate({ _id: req.params.id }, req.body + 1)
+    .then((poll) => res.json(poll))
+    .catch((err) => res.status(422).json(err));
+};
+
+module.exports = {
+  registerUser,
+  findUserById,
+  findPollById,
+  findUserProfile,
+  deleteUser,
+  getAllUsers,
+  updatePoll,
 };

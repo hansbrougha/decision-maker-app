@@ -2,26 +2,29 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+
 import Typography from "@material-ui/core/Typography";
-import logo from "../logo.svg";
+
+//https://www.iconshock.com/
+
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import "./home.css";
+import PollIcon from "@material-ui/icons/Poll";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 const styles = (theme) => ({
   card: {
-    maxWidth: 700,
     margin: "auto",
-    marginTop: theme.spacing.unit * 5
+    marginTop: theme.spacing(5),
+    height: 300,
   },
-  title: {
-    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${
-      theme.spacing.unit * 2
-    }px`,
-    color: theme.palette.text.secondary,
-    fontSize: 24
-  },
+
   media: {
-    minHeight: 450
-  }
+    minHeight: 450,
+    maxHeight: 550,
+    maxWidth: 300,
+  },
 });
 
 class Home extends Component {
@@ -29,22 +32,50 @@ class Home extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <Card className={classes.card}>
-          <Typography type="headline" component="h2" className={classes.title}>
-            Welcome to the MERN APP
-          </Typography>
-          <CardMedia
-            className={classes.media}
-            image={logo}
-            title="Auth with MERN"
-          />
-          <CardContent>
-            <Typography type="body1" component="p">
-              This is a demo application that uses a Node + MongoDB API for user
-              authentication. Built With React + Material UI.
-            </Typography>
-          </CardContent>
-        </Card>
+        <Grid container spacing={3}>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
+          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+            <Paper className={classes.paper}>
+              <Card className={classes.card}>
+                <CardContent className="card" align="center">
+                  <a href="/recent">
+                    <PollIcon
+                      alt="view-polls"
+                      className="icon"
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
+                    />
+                  </a>
+
+                  <Typography type="body1" component="h2">
+                    Recent Polls
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+            <Paper className={classes.paper}>
+              <Card className={classes.card}>
+                <CardContent className="card" align="center">
+                  <a href="/create">
+                    <AddCircleIcon
+                      alt="create-poll"
+                      className="icon"
+                      color="primary"
+                      style={{ fontSize: 150, color: "#1D8B75" }}
+                    />
+                  </a>
+
+                  <Typography type="body1" component="h2">
+                    Create Poll
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Paper>
+          </Grid>
+          <Grid item xs={false} sm={false} md={1} lg={1} xl={1}></Grid>
+        </Grid>
       </div>
     );
   }

@@ -3,9 +3,9 @@ export const registerUser = (user) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
     .then((response) => {
       return response.json();
@@ -19,8 +19,8 @@ export const findUserProfile = (params, credentials) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
-    }
+      Authorization: "Bearer " + credentials.t,
+    },
   })
     .then((response) => {
       return response.json();
@@ -34,8 +34,8 @@ export const deleteUser = (params, credentials) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + credentials.t
-    }
+      Authorization: "Bearer " + credentials.t,
+    },
   })
     .then((response) => {
       return response.json();

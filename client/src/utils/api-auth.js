@@ -3,10 +3,10 @@ export const signin = (user) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
     credentials: "include",
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
     .then((response) => {
       return response.json();
@@ -16,7 +16,7 @@ export const signin = (user) => {
 
 export const signout = () => {
   return fetch("/auth/signout/", {
-    method: "GET"
+    method: "GET",
   })
     .then((response) => {
       return response.json();
