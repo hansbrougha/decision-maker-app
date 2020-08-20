@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 const ChartItem = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [poll, setPoll] = useState(props.poll);
-  // const [selected, setSelected] = useState();
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -52,43 +51,30 @@ const ChartItem = (props) => {
         <h2 className={classes.heading}>{poll.pollTitle}</h2>
       </AccordionSummary>
       <AccordionDetails>
-        <h3>{poll.pollTitle}</h3>
-        <br />
-        <ul>
-          <li>
-            {poll.option1Title} ----- {poll.option1Val}
-          </li>
-          <br />
-          <li>
-            {poll.option2Title} ----- {poll.option2Val}
-          </li>
-          <br />
-          <li>
-            {poll.option3Title} ----- {poll.option3Val}
-          </li>
-          <br />
-          <li>
-            {poll.option4Title} ----- {poll.option4Val}
-          </li>
-          <br />
-        </ul>
-        {/* <Chart
+        <Chart
+          className="chart"
+          width={"100%"}
+          height={"250px"}
           chartType="PieChart"
+          loader={
+            <h2>
+              <em>Loading results!</em>
+            </h2>
+          }
           data={[
-            [poll.pollTitle, "votes"],
+            [poll.pollTitle, "Total votes"],
             [poll.option1Title, poll.option1Val],
             [poll.option2Title, poll.option2Val],
             [poll.option3Title, poll.option3Val],
             [poll.option4Title, poll.option4Val],
           ]}
           options={{
-            backgroundColor: "#1D8B75",
+            titleTextStyle: { color: "#FFF" },
+            legendTextStyle: { color: "#FFF", fontSize: 20 },
+            backgroundColor: "",
+            is3D: true,
           }}
-          graph_id="PieChart"
-          width={"100%"}
-          height={"300px"}
-          legend_toggle
-        /> */}
+        />
       </AccordionDetails>
     </Accordion>
   );
@@ -126,76 +112,3 @@ export default function ControlledAccordions(theme) {
     </div>
   );
 }
-
-/////
-// export default function ControlledAccordions(theme) {
-//   const classes = useStyles();
-//   const [expanded, setExpanded] = React.useState(false);
-
-//   const handleChange = (panel) => (event, isExpanded) => {
-//     setExpanded(isExpanded ? panel : false);
-//   };
-
-//   const [options, setOptions] = useState({
-//     pollTitle: "",
-//   });
-
-//   useEffect(() => {
-//     loadOptions();
-//   }, []);
-
-//   function loadOptions() {
-//     API.getOptions()
-//       .then((res) => setOptions(res.data))
-//       .catch((err) => console.log(err));
-//   }
-
-//   return (
-//     <div className={classes.root}>
-//       <Typography className={classes.heading} gutterBottom>
-//         Recent Poll Results
-//       </Typography>
-//       {options.length ? (
-//         options.map((props) => (
-//           <Accordion
-//             key={props.pollTitle}
-//             expanded={expanded === "showPoll"}
-//             onChange={handleChange("showPoll")}
-//             className={classes.open}
-//           >
-//             <AccordionSummary
-//               expandIcon={<ExpandMoreIcon />}
-//               aria-controls="pane13bh-content"
-//               id="pane13bh-header"
-//             >
-//               <h2 className={classes.heading}>{props.pollTitle}</h2>
-//             </AccordionSummary>
-//             <AccordionDetails>
-//               <ChartItem
-//                 chartType="PieChart"
-//                 data={[
-//                   [props.pollTitle, "votes"],
-//                   [props.option1Title, props.option1Val],
-//                   [props.option2Title, props.option2Val],
-//                   [props.option3Title, props.option3Val],
-//                   [props.option4Title, props.option4Val],
-//                 ]}
-//                 options={{
-//                   backgroundColor: "#1D8B75",
-//                 }}
-//                 graph_id="PieChart"
-//                 width={"100%"}
-//                 height={"300px"}
-//                 legend_toggle
-//               />
-//             </AccordionDetails>
-//           </Accordion>
-//         ))
-//       ) : (
-//         <h1>
-//           NO POSTS YET.....<a href="/create">MAKE ONE!</a>
-//         </h1>
-//       )}
-//     </div>
-//   );
-// }
