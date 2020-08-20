@@ -1,7 +1,8 @@
 {
   "name": "decision-maker-app",
   "version": "0.0.1",
-  "description": "MERN stack auth demo with Material UI.",
+  "description": "MERN stack polling application",
+  "homepage": ".",
   "main": "server.js",
   "engines": {
     "node": "13.7.0"
