@@ -20,7 +20,7 @@ class Routes extends Component {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path="." component={Home} />
+          <Route exact path="/" component={Home} />
 
           <PrivateRoutes path="/user/edit/:_id" />
           <Route path="/users/:_id" component={Profile} />

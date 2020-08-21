@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "MERN stack auth demo with Material UI.",
   "main": "server.js",
-  "homepage": ".",
   "type": "module",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

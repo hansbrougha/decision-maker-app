@@ -97,3 +97,11 @@ nav.nav {
   padding-bottom: 0; 
   box-shadow: 5px 10px 0px darken($color:#212121, $amount: 4);
 }
+
+// Media Queries
+
+@media (max-width: 500px) {
+  html, body {
+    font-size: 80%; 
+  }
+}
