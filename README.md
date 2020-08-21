@@ -2,12 +2,12 @@
 
 ![Languages badge](https://img.shields.io/github/languages/count/hansbrougha/decision-maker-app)
 ![Last commit badge](https://img.shields.io/github/last-commit/hansbrougha/decision-maker-app)
+![Code size](https://img.shields.io/github/languages/code-size/hansbrougha/decision-maker-app)
 
 ## Description:
+We've created a polling application which allows users to create and vote on polls. Users can easily view results of each poll displayed in a chart.
 
-COULDN'T DECIDE ON A DESCRIPTION....APP WASN'T WORKING AT THE TIME!
-
-_Deployed app:_ https://dashboard.heroku.com/apps/evening-wildwood-43860
+_Deployed app:_ https://evening-wildwood-43860.herokuapp.com/
 # Table of Contents:
 
 - [Installation ](#installation)
