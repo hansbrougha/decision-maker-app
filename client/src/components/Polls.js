@@ -9,18 +9,18 @@ const styles = (theme) => ({
   card: {
     maxWidth: 700,
     margin: "auto",
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   },
   title: {
     padding: `${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(
       2
     )}px`,
     color: theme.palette.text.secondary,
-    fontSize: 24
+    fontSize: 24,
   },
   media: {
-    minHeight: 450
-  }
+    minHeight: 450,
+  },
 });
 
 class Polls extends Component {
