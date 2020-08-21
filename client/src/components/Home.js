@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 //https://www.iconshock.com/
 
@@ -37,40 +38,38 @@ class Home extends Component {
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent className="card" align="center">
-                  <a href="/recent">
+                <Link to="/recent">
+                  <CardContent className="card" align="center">
                     <PollIcon
                       alt="view-polls"
                       className="icon"
                       color="primary"
                       style={{ fontSize: 150, color: "#1D8B75" }}
                     />
-                  </a>
-
-                  <Typography type="body1" component="h2">
-                    Recent Polls
-                  </Typography>
-                </CardContent>
+                    <Typography type="body1" component="h2">
+                      Recent Polls
+                    </Typography>
+                  </CardContent>
+                </Link>
               </Card>
             </Paper>
           </Grid>
           <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
             <Paper className={classes.paper}>
               <Card className={classes.card}>
-                <CardContent className="card" align="center">
-                  <a href="/create">
+                <Link to="/create">
+                  <CardContent className="card" align="center">
                     <AddCircleIcon
                       alt="create-poll"
                       className="icon"
                       color="primary"
                       style={{ fontSize: 150, color: "#1D8B75" }}
                     />
-                  </a>
-
-                  <Typography type="body1" component="h2">
-                    Create Poll
-                  </Typography>
-                </CardContent>
+                    <Typography type="body1" component="h2">
+                      Create Poll
+                    </Typography>
+                  </CardContent>
+                </Link>
               </Card>
             </Paper>
           </Grid>
