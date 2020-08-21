@@ -4,9 +4,6 @@
   "description": "MERN stack polling application",
   "homepage": "https://evening-wildwood-43860.herokuapp.com/",
   "main": "server.js",
-  "engines": {
-    "node": "13.7.0"
-  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "server": "nodemon index.js --ignore client",
