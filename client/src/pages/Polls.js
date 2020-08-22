@@ -30,7 +30,6 @@ class Polls extends Component {
         <Card className={classes.card} align="center">
           <CreateDecision />
         </Card>
-        <BottomNav />
       </div>
     );
   }
