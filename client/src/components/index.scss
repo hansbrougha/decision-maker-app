@@ -123,7 +123,7 @@ nav.nav {
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   margin-top: max(100vh); 
   display: inline-block;
@@ -186,4 +186,8 @@ div.MuiAlert-filledInfo {
     font-size: 100%;
   }
   
+}
+
+label.polls {
+  text-align: center; 
 }

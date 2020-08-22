@@ -15,9 +15,14 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import Chart from "react-google-charts";
 
+import '../index.scss'; 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    textAlign: 'center',
+    padding: '1em',
+    margin: '0 auto'
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
@@ -66,24 +71,25 @@ const PollItem = (props) => {
       key={props.index}
       expanded={expanded === "showPoll"}
       onChange={handleChange("showPoll")}
-      className={classes.open}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="pane13bh-content"
         id="pane13bh-header"
+        className={classes.root}
       >
         <h2 className={classes.heading}>{poll.pollTitle}</h2>
       </AccordionSummary>
       <AccordionDetails>
         <form>
-          <FormControl component="fieldset">
+          <FormControl component="fieldset" className={classes.root}>
             {/* HARDCODED. NEED TO FIX */}
             <FormLabel component="legend">{}</FormLabel>
             <RadioGroup
               onChange={handleRadioChange}
               aria-label={poll.pollTitle}
               name={poll.pollTitle}
+             
             >
               <FormControlLabel
                 value={poll.option1Title}
@@ -91,6 +97,7 @@ const PollItem = (props) => {
                 control={<Radio />}
                 label={poll.option1Title}
                 name={"option1Val"}
+                className='polls'
               />
               <FormControlLabel
                 value={poll.option2Title}
@@ -98,6 +105,7 @@ const PollItem = (props) => {
                 control={<Radio />}
                 label={poll.option2Title}
                 name={"option2Val"}
+                 className='polls'
               />
               <FormControlLabel
                 value={poll.option3Title}
