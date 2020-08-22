@@ -35,13 +35,19 @@ const theme = createMuiTheme({
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
+      <div className="container">
+        <Helmet>
+          <title>unbiased.io</title>
+        </Helmet>
+        <BrowserRouter>
+          {/* <MuiThemeProvider theme={theme}> */}
+          {/* <CssBaseline /> */}
           <Routes />
-          <BottomNav />
-        </MuiThemeProvider>
-      </BrowserRouter>
+
+          {/* </MuiThemeProvider> */}
+          <Footer />
+        </BrowserRouter>
+      </div>
     );
   }
 }

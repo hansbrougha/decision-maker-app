@@ -1,29 +1,28 @@
 import React, { Component } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import auth from "../auth/auth-helper";
-import { findUserProfile } from "../../utils/api-user.js";
+import auth from "../components/auth/auth-helper";
+import { findUserProfile } from "../utils/api-user.js";
 import { Redirect } from "react-router-dom";
-import Charts from "../Charts/Charts";
-
-import DeleteUser from "./DeleteUser";
-
+import Charts from '../components/Charts';
+import './index.scss'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
+import { withStyles } from "@material-ui/core";
+import { Paper } from '@material-ui/core';
 const styles = (theme) => ({
-  root: theme.mixins.gutters({
-    maxWidth: 600,
-    margin: "auto",
-    padding: theme.spacing(3),
-    marginTop: theme.spacing(5),
-  }),
+  root: {
+    margin: "0 auto",
+    color: 'black'
+  },
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
-    color: theme.palette.protectedTitle,
+    color: '#303030'
   },
 });
 
@@ -64,12 +63,27 @@ class Profile extends Component {
       return <Redirect to="/signin" />;
     }
     return (
-      <Paper className={classes.root} elevation={4}>
-        <Typography type="title" className={classes.title}>
-          Poll Charts
+      <div className='container'>
+        <Typography>
+          <h1>{auth.isAuthenticated().user.name}'s Profile</h1>
         </Typography>
-        <List dense>
-          <ListItem>
+        <TableContainer component={Paper} className='profile-root'>
+          <Table className='profile-root' elevation={4}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Email </TableCell>
+                <TableCell>{auth.isAuthenticated().user.email}</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableHead>
+              <TableRow>
+                <TableCell># of Polls Participated In </TableCell>
+                <TableCell>...</TableCell>
+              </TableRow>
+            </TableHead>
+            
+
+            {/* <ListItem>
             <ListItemText
               primary={this.state.user.name}
               secondary={this.state.user.email}
@@ -80,11 +94,14 @@ class Profile extends Component {
                   <DeleteUser userId={this.state.user._id} />
                 </ListItemSecondaryAction>
               )}
-          </ListItem>
-          <Divider />
-        </List>
-        <Charts />
-      </Paper>
+          </ListItem> */}
+
+
+
+
+          </Table>
+        </TableContainer>
+      </div>
     );
   }
 }

@@ -8,30 +8,30 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { Typography } from "@material-ui/core";
-import "./decision.css";
+import "../index.scss";
 
-const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: theme.spacing(1),
-  },
-  textfield: {
-    background: theme.palette.secondary,
-    color: theme.palette.primary.dark,
-    paddingLeft: "15px",
-    paddingRight: "15px",
-    paddingBottom: "10px",
-    width: 270,
-  },
-  button: {
-    margin: "auto",
-    marginTop: "10px",
-    color: theme.palette.secondary.main,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   margin: {
+//     margin: theme.spacing(1),
+//   },
+//   textfield: {
+//     background: theme.palette.secondary,
+//     color: theme.palette.primary.dark,
+//     paddingLeft: "15px",
+//     paddingRight: "15px",
+//     paddingBottom: "10px",
+//     width: 270,
+//   },
+//   button: {
+//     margin: "auto",
+//     marginTop: "10px",
+//     color: theme.palette.secondary.main,
+//   },
+// }));
 
 export default function Playground() {
   const [open, setOpen] = React.useState(false);
-  const classes = useStyles();
+  // const classes = useStyles();
   const [value, setValue] = useState({
     pollTitle: "",
     option1Title: "",
@@ -66,7 +66,7 @@ export default function Playground() {
                   color="inherit"
                   size="small"
                   onClick={() => {
-                    setOpen(true);
+                    setOpen(false);
                   }}
                 >
                   <CloseIcon fontSize="inherit" />
@@ -74,43 +74,43 @@ export default function Playground() {
               }
             >
               <Typography>
-                Poll successfully created! <a href="/recent">Check it out!</a>
+                Poll successfully created! <a href="/recent" className='links'>Check it out!</a>
               </Typography>
             </Alert>
           </Collapse>
           <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="What Would You Like To Decide?"
             name="pollTitle"
           />
           {/* <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="How Many Deciders?"
             name="deciders"
           /> */}
           <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="Option 1"
             name="option1Title"
           />
           <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="Option 2"
             name="option2Title"
           />
           <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="Option 3"
             name="option3Title"
           />
           <TextField
             onChange={handleChange}
-            className={classes.textfield}
+            className='input'
             label="Option 4"
             name="option4Title"
           />
@@ -119,8 +119,7 @@ export default function Playground() {
       <Button
         variant="contained"
         size="large"
-        color="primary"
-        className={classes.button}
+        className='button'
         type="submit"
         disabled={open}
       >

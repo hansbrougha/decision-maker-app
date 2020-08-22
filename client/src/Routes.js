@@ -12,7 +12,7 @@ import Recents from "./components/Recents";
 class Routes extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core//Button";
+import Button from "@material-ui/core/Button";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogContent from "@material-ui/core/DialogContent";
 import Dialog from "@material-ui/core/Dialog";
 import Delete from "@material-ui/icons/Delete";
-import auth from "../auth/auth-helper";
-import { deleteUser } from "../../utils/api-user";
+import auth from "../components/auth/auth-helper";
+import { deleteUser } from "../utils/api-user";
 import { Redirect } from "react-router-dom";
 
 class DeleteUser extends Component {

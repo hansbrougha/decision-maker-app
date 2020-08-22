@@ -1,0 +1,189 @@
+@import url("https://use.typekit.net/zfa7adf.css");
+
+// Variables
+$darkest: #212121;
+$darker: #303030;
+$teal: #009688;
+
+.icon:active {
+  opacity: 50%;
+}
+
+.icon {
+  margin-top: 30px;
+}
+
+@mixin font-primary {
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+}
+
+@mixin centered {
+  margin: 0 auto; 
+  width: 100%; 
+  text-align: center;
+}
+
+.title {
+  @include font-primary();
+}
+
+
+
+body {
+  @include font-primary();
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $darker;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.links {
+  color: $darkest; 
+}
+
+
+
+nav.nav {
+  background-color: $darkest;
+  box-shadow: 5px 10px 0px darken($color: $darkest, $amount: 4);
+  padding-top: 1em; 
+}
+
+@mixin input {
+  color: $teal;
+  margin: 0 auto;
+  label.MuiFormLabel-root{
+    color: lighten($darker, 15);
+  }
+  
+  label.MuiFormLabel-root.Mui-focused {
+    color: $darker; 
+  }
+  
+  .Mui-focused.MuiInputBase-formControl.Mui-focused  {
+    color: $teal; 
+    border-bottom: $teal 1px solid; 
+  }
+
+  .MuiInputBase-input {
+    color: $teal; 
+  }
+  
+  .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-underline:after {
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    transform: scaleX(0); 
+
+    border-bottom: $teal 1px solid; 
+  
+  }
+}
+
+#email,
+#name,
+#password {
+  @include input();
+  @include font-primary();
+  border-bottom: $teal 1px solid;
+  text-align: left;
+}
+
+#submitBtn {
+  background-color: $teal;
+}
+
+.navbar {
+  margin: 0 auto;
+  min-width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-right: 0;
+ 
+  .navItem {
+    font-family: "urbane", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-decoration-line: none;
+    color: white;
+  }
+}
+
+#logo {
+  font-family: "mokoko", serif;
+  color: $teal;
+  font-size: 2em;
+  text-decoration-line: none;
+  margin: 0 auto;
+  min-width: 100%;
+  padding-top: 0.5em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: max(100vh); 
+  display: inline-block;
+  width: 100%;
+  background-color: $darkest;
+  padding-bottom: 2em; 
+  text-align: center; 
+
+}
+
+button label.MuiBottomNavigationAction-root {
+  color: white;
+}
+
+.card {
+  @include centered();
+  
+  .cardContent, h2 {
+    color: white;
+    background: $darkest; 
+    @include centered();
+    .cardBody {
+      @include centered();
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  @include input();
+  div {
+
+    margin-bottom: 1em; 
+  } 
+}
+
+
+
+
+button.button {
+  background: $teal; 
+  ::hover {
+    background: $darker; 
+  }
+  
+}
+
+.MuiButtonBase-root, .MuiButton-containedSizeLarge {
+  background: $darker; 
+}
+
+div.MuiAlert-filledInfo {
+  background: $teal; 
+}
+// Media Queries
+
+@media (max-width: 600px) {
+  html,
+  body {
+    font-size: 100%;
+  }
+  
+}

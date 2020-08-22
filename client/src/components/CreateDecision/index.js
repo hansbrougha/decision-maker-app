@@ -26,14 +26,10 @@ export default function SimpleCard() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Create a Decision
+    <Card className="card">
+      <CardContent className="cardContent">
+        <Typography className="cardBody" gutterBottom>
+          <h2>Create a Decision</h2>
         </Typography>
 
         <Decision />

@@ -1,0 +1,85 @@
+@import url("https://use.typekit.net/zfa7adf.css");
+.icon:active {
+  opacity: 50%;
+}
+
+.icon {
+  margin-top: 30px;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin-top: 1em;
+}
+
+body {
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #303030;
+}
+
+.logo {
+  font-family: "mokoko", serif;
+  font-weight: 400;
+  font-size: 3em;
+  color: #009688;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.nav {
+  background-color: #212121;
+}
+
+input {
+  color: white;
+}
+
+#logo {
+  text-decoration-line: none;
+}
+
+#link {
+  font-family: "roboto", sans-serif;
+  color: #009688;
+}
+
+.card {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-root {
+  margin: 0 auto;
+  margin-top: 1em;
+  background: #212121;
+  border: none;
+}
+.profile-root h2, .profile-root p {
+  color: #009688;
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
+}
+
+th.MuiTableCell-root {
+  background: #212121;
+  border-bottom: #303030 1px solid;
+  color: #009688;
+}
+
+div.MuiPaper-root {
+  background: #212121;
+}

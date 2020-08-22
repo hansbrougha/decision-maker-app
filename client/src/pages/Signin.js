@@ -7,35 +7,44 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Icon from "@material-ui/core/Icon";
 import { withStyles } from "@material-ui/core/styles";
-import auth from "./auth-helper";
+import auth from "../components/auth/auth-helper";
 import { Redirect } from "react-router-dom";
-import { signin } from "../../utils/api-auth.js";
+import { signin } from "../utils/api-auth.js";
+import Link from '@material-ui/core/Link';
+
+
+
 import Alert from "@material-ui/lab/Alert";
 
+
 const styles = (theme) => ({
+  root: {
+    color: '#ffffff'
+  },
   card: {
     maxWidth: 600,
-    margin: "auto",
+    margin: "0 auto",
     textAlign: "center",
     marginTop: theme.spacing(5),
     paddingBottom: theme.spacing(2),
+    backgroundColor: '#212121'
   },
   error: {
     verticalAlign: "middle",
   },
   title: {
-    marginTop: theme.spacing(2),
-    color: theme.palette.openTitle,
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 300,
+    margin: '0.5em 0 0.5em 0'
   },
   submit: {
     margin: "auto",
     marginBottom: theme.spacing(2),
   },
+  input: {
+    marginBottom: '1em'
+  },
+  header: {
+    backgroundColor: '#009688'
+  }
 });
 
 class Signin extends Component {
@@ -71,7 +80,7 @@ class Signin extends Component {
     const { classes } = this.props;
     const { from } = this.props.location.state || {
       from: {
-        pathname: "/",
+        pathname: "/main",
       },
     };
     const { redirectToReferrer } = this.state;
@@ -81,17 +90,17 @@ class Signin extends Component {
 
     return (
       <Card className={classes.card}>
-        <Alert severity="info" action={<Button href="/signup">SIGN UP</Button>}>
+        {/* <Alert severity="info" className={classes.header} action={<Button href="/signup">SIGN UP</Button>}>
           Must have an account to view/create polls!
-        </Alert>
+        </Alert> */}
         <CardContent>
-          <Typography type="headline" component="h2" className={classes.title}>
-            Sign In
+          <Typography type="headline" variant="h2" className={classes.title}>
+            Login
           </Typography>
           <TextField
             id="email"
             type="email"
-            label="Email"
+            placeholder="Email"
             className={classes.textField}
             value={this.state.email}
             onChange={this.handleChange("email")}
@@ -101,7 +110,7 @@ class Signin extends Component {
           <TextField
             id="password"
             type="password"
-            label="Password"
+            placeholder="Password"
             className={classes.textField}
             value={this.state.password}
             onChange={this.handleChange("password")}
@@ -119,14 +128,15 @@ class Signin extends Component {
         </CardContent>
         <CardActions>
           <Button
-            color="primary"
-            variant="outlined"
+            variant="filled"
             onClick={this.clickSubmit}
             className={classes.submit}
+            id="submitBtn"
           >
-            Submit
+            Log In
           </Button>
         </CardActions>
+        <Typography variant="caption" className={classes.root}>Don't have an account? <Link to='/signup' id="link">Sign up here.</Link></Typography>
       </Card>
     );
   }
