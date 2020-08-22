@@ -10,10 +10,10 @@ import Divider from "@material-ui/core/Divider";
 import auth from "../components/auth/auth-helper";
 import { findUserProfile } from "../utils/api-user.js";
 import { Redirect } from "react-router-dom";
-import Charts from '../components/Charts'; 
+import Charts from "../Charts/Charts";
 
 import RecentPolls from "../components/RecentPolls";
-import BottomNav from '../components/BottomNav'; 
+import BottomNav from "../components/BottomNav";
 import DeleteUser from "./DeleteUser";
 import { withStyles } from "@material-ui/core";
 
@@ -66,27 +66,27 @@ class Result extends Component {
     }
     return (
       <div>
-      <Paper className={classes.root} elevation={4}>
-        <Typography type="title" className={classes.title}>
-          Poll Charts
-        </Typography>
-        <List dense>
-          <ListItem>
-            <ListItemText
-              primary={this.state.user.name}
-              secondary={this.state.user.email}
-            />{" "}
-            {auth.isAuthenticated().user &&
-              auth.isAuthenticated().user._id === this.state.user._id && (
-                <ListItemSecondaryAction>
-                  <DeleteUser userId={this.state.user._id} />
-                </ListItemSecondaryAction>
-              )}
-          </ListItem>
-          <Divider />
-        </List>
-        <Charts />
-      </Paper>
+        <Paper className={classes.root} elevation={4}>
+          <Typography type="title" className={classes.title}>
+            Poll Charts
+          </Typography>
+          <List dense>
+            <ListItem>
+              <ListItemText
+                primary={this.state.user.name}
+                secondary={this.state.user.email}
+              />{" "}
+              {auth.isAuthenticated().user &&
+                auth.isAuthenticated().user._id === this.state.user._id && (
+                  <ListItemSecondaryAction>
+                    <DeleteUser userId={this.state.user._id} />
+                  </ListItemSecondaryAction>
+                )}
+            </ListItem>
+            <Divider />
+          </List>
+          <Charts />
+        </Paper>
       </div>
     );
   }

@@ -3,15 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-// import Deciders from "../Deciders/Deciders";
-// import Types from "../Types/Types";
-
-
-
-
-
-import Decision from "../Decision";
-import '../index.scss';
+import Decision from "../Decision/Decision";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,12 +26,9 @@ export default function SimpleCard() {
   const classes = useStyles();
 
   return (
-    <Card className='card'>
-      <CardContent className='cardContent'>
-        <Typography
-          className='cardBody'
-          gutterBottom
-        >
+    <Card className="card">
+      <CardContent className="cardContent">
+        <Typography className="cardBody" gutterBottom>
           <h2>Create a Decision</h2>
         </Typography>
 

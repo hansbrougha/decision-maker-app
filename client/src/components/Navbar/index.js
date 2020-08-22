@@ -8,64 +8,53 @@ import Button from "@material-ui/core/Button";
 import auth from "../auth/auth-helper";
 import { Link, withRouter } from "react-router-dom";
 
-
-import '../index.scss'; 
-
+import "../index.scss";
 
 const isActive = (history, path) => {
-  if (history.location.pathname === path) return { color: "#009688"};
+  if (history.location.pathname === path) return { color: "#009688" };
   else return { color: "#ffffff" };
 };
 const Menu = withRouter(({ history }) => (
-  <AppBar position='static'className='nav'>
-    <Link to='/' className='nav' id='logo'><p type="title" id='logo'>
+  <AppBar position="static" className="nav">
+    <Link to="/" className="nav" id="logo">
+      <p type="title" id="logo">
         unbiased.io
       </p>
-      </Link>
-    <Toolbar className='nav'>
-      
-     <br />
+    </Link>
+    <Toolbar className="nav">
+      <br />
       {!auth.isAuthenticated() && (
-        <span className='navbar'>
-           <Link to="/" className='navItem'>
-        <IconButton aria-label="Home" style={isActive(history, "/")}>
-          <Home />
-        </IconButton>
+        <span className="navbar">
+          <Link to="/" className="navItem">
+            <IconButton aria-label="Home" style={isActive(history, "/")}>
+              <Home />
+            </IconButton>
           </Link>
-          <Link to="/signup" className='navItem'>
+          <Link to="/signup" className="navItem">
             <Button style={isActive(history, "/signup")}>Sign up</Button>
           </Link>
-          <Link to="/signin" className='navItem'>
+          <Link to="/signin" className="navItem">
             <Button style={isActive(history, "/signin")}>Sign In</Button>
           </Link>
         </span>
       )}
       {auth.isAuthenticated() && (
-        <span className='navbar'>
-           <Link to="/main" className='navItem'>
-        <IconButton aria-label="Home" style={isActive(history, "/main")}>
-          <Home />
-        </IconButton>
-        </Link>
-          <Link to="/profile/:_id" className='navItem'>
-            <Button
-              style={isActive(
-                history,
-                "/profile/:_id"
-              )}
-            >
-              My Profile
+        <span>
+          Welcome <strong>{auth.isAuthenticated().user.name}!</strong>
+          <Link to={"/users/" + auth.isAuthenticated().user._id}>
+            <Button style={isActive(history, "/profile/:_id")}>
+              Poll results
             </Button>
           </Link>
-          <Link to='/' className='navItem'>
-          <Button
-            color='inherit'
-            onClick={() => {
-              auth.signout(() => history.push("/"));
-            }}
-          >
-            Sign out
-          </Button>
+          <Link to="/" className="navItem">
+            <Button
+              color="inherit"
+              onClick={() => {
+                auth.signout(() => history.push("/"));
+              }}
+            >
+              Sign out
+            </Button>
           </Link>
         </span>
       )}
