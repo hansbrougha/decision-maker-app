@@ -15,12 +15,13 @@ import { fad } from '@fortawesome/pro-duotone-svg-icons'
 import Footer from './components/Footer'
 import Helmet from 'react-helmet'
 
+
 library.add(fab, fas, fad); 
 
 class App extends Component {
   render() {
     return (
-      <div id='container'>
+      <div className='container'>
         <Helmet>
           <title>unbiased.io</title>
         </Helmet>
@@ -30,9 +31,12 @@ class App extends Component {
           <Routes />
       
         {/* </MuiThemeProvider> */}
+        <Footer />
       </BrowserRouter>
-      <Footer />
+    
+      
       </div>
+      
     );
   }
 }

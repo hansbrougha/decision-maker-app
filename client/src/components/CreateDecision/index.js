@@ -5,37 +5,42 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 // import Deciders from "../Deciders/Deciders";
 // import Types from "../Types/Types";
+
+
+
+
+
 import Decision from "../Decision";
+import '../index.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
     background: theme.palette.secondary,
-    margin: "auto"
+    margin: "auto",
   },
   title: {
     fontSize: 35,
-    textAlign: "Center"
+    textAlign: "Center",
   },
   button: {
     margin: "auto",
     marginTop: "10px",
-    color: theme.palette.secondary.main
-  }
+    color: theme.palette.secondary.main,
+  },
 }));
 
 export default function SimpleCard() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
+    <Card className='card'>
+      <CardContent className='cardContent'>
         <Typography
-          className={classes.title}
-          color="textSecondary"
+          className='cardBody'
           gutterBottom
         >
-          Create a Decision
+          <h2>Create a Decision</h2>
         </Typography>
 
         <Decision />

@@ -1,15 +1,16 @@
 {
   "name": "decision-maker-app",
   "version": "0.0.1",
-  "description": "MERN stack auth demo with Material UI.",
+  "description": "MERN stack polling application",
+  "homepage": "https://evening-wildwood-43860.herokuapp.com/",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "server": "nodemon index.js --ignore client",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
+    "seed": "node test/scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -22,19 +23,21 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "ajax": "^0.0.4",
     "axios": "^0.19.2",
     "chokidar": "^3.4.2",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.8"
+    "mongoose": "^5.3.8",
+    "react-google-charts": "2",
+    "nodemon": "^1.18.7",
+    "concurrently": "^4.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-watch": "^2.0.7",
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
   }

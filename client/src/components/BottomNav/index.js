@@ -1,28 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import RestoreIcon from "@material-ui/icons/Restore";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import PollIcon from "@material-ui/icons/Poll";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Divider from '@material-ui/core/Divider'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     background: '#212121',
-    marginTop: "10px"
+    margin: 'auto',
+    paddingBottom: '1em',
+    borderBottom: '#303030 1px solid',
+    borderWidth: '100%',
+    height: 'fit-content'
   },
   bottomNav: {
     color: theme.palette.primary.contrastText,
-    width: "100%"
+    width: "100%",
+   
   },
   footer: {
     background: '#212121'
   },
-  stickToBottom: {
-    width: "100%",
-    position: "fixed",
-    bottom: 0
+  icon: {
+    fontSize: '4em',
+    color: '#009688',
+    textAlign: 'center', 
+    margin: '0.25em',
+  },
+  divider: {
+    backgroundColor: '#009688',
+    opacity: '0.35'
   }
 }));
 
@@ -31,7 +44,7 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState();
 
   return (
-    <footer className={classes.stickToBottom}>
+    <div className='container'>
       <center>
         <BottomNavigation
           className={(classes.stickToBottom, classes.root)}
@@ -41,28 +54,32 @@ export default function SimpleBottomNavigation() {
           }}
           showLabels
         >
-          <BottomNavigationAction
-            className={classes.bottomNav}
-            label="Recents"
-            icon={<RestoreIcon />}
-            href="/recent"
-            size="large"
-          />
-          <BottomNavigationAction
-            className={classes.bottomNav}
-            label="My Decisions"
-            icon={<PollIcon />}
-            href="/users/:_id"
-          />
-          <BottomNavigationAction
-            className={classes.bottomNav}
-            label="Create Decision"
-            icon={<AddCircleIcon />}
-            href="/create"
-            size="large"
-          />
+          <Link to="/create">
+          <FontAwesomeIcon
+                      title="Create"
+                      icon={['fad', 'plus']}
+                      className={classes.icon}
+                    />
+          </Link>
+          <Divider orientation="vertical" flexItem className={classes.divider}/>
+          <Link to="/results/:_id">
+          <FontAwesomeIcon
+                      title="Create"
+                      icon={['fad', 'poll-people']}
+                      className={classes.icon}
+                    />
+          </Link>
+          <Divider orientation="vertical" flexItem className={classes.divider}/>
+          <Link to="/recent">
+          <FontAwesomeIcon
+                      title="Recent"
+                      icon={['fad', 'redo-alt']}
+                      className={classes.icon}
+                    />
+          </Link>
+          
         </BottomNavigation>
       </center>
-    </footer>
+    </div>
   );
 }

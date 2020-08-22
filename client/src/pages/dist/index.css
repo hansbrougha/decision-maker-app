@@ -1,12 +1,4 @@
 @import url("https://use.typekit.net/zfa7adf.css");
-
-// Variables
-$darkest: #212121;
-$darker: #303030;
-$teal: #009688;
-
-
-
 .icon:active {
   opacity: 50%;
 }
@@ -65,30 +57,29 @@ input {
 }
 
 .card {
-  margin: 0 auto; 
+  margin: 0 auto;
   text-align: center;
 }
 
 .profile-root {
-  margin: 0 auto; 
-  margin-top: 1em; 
-  background: $darkest;
-  border: none;  
-  h2, p {
-    
-    color: $teal;
-    padding: 0; 
-    margin: 0; 
-    padding-top: 1em; 
-  }
+  margin: 0 auto;
+  margin-top: 1em;
+  background: #212121;
+  border: none;
+}
+.profile-root h2, .profile-root p {
+  color: #009688;
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
 }
 
 th.MuiTableCell-root {
-  background: $darkest; 
-  border-bottom: $darker 1px solid; 
-  color: $teal; 
+  background: #212121;
+  border-bottom: #303030 1px solid;
+  color: #009688;
 }
 
 div.MuiPaper-root {
-  background: $darkest; 
+  background: #212121;
 }

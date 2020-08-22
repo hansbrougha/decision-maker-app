@@ -1,0 +1,186 @@
+@import url("https://use.typekit.net/zfa7adf.css");
+.icon:active {
+  opacity: 50%;
+}
+
+.icon {
+  margin-top: 30px;
+}
+
+.title {
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #303030;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.links {
+  color: #212121;
+}
+
+nav.nav {
+  background-color: #212121;
+  box-shadow: 5px 10px 0px #171717;
+  padding-top: 1em;
+}
+
+#email,
+#name,
+#password {
+  color: #009688;
+  margin: 0 auto;
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+  border-bottom: #009688 1px solid;
+  text-align: left;
+}
+#email label.MuiFormLabel-root,
+#name label.MuiFormLabel-root,
+#password label.MuiFormLabel-root {
+  color: #565656;
+}
+#email label.MuiFormLabel-root.Mui-focused,
+#name label.MuiFormLabel-root.Mui-focused,
+#password label.MuiFormLabel-root.Mui-focused {
+  color: #303030;
+}
+#email .Mui-focused.MuiInputBase-formControl.Mui-focused,
+#name .Mui-focused.MuiInputBase-formControl.Mui-focused,
+#password .Mui-focused.MuiInputBase-formControl.Mui-focused {
+  color: #009688;
+  border-bottom: #009688 1px solid;
+}
+#email .MuiInputBase-input,
+#name .MuiInputBase-input,
+#password .MuiInputBase-input {
+  color: #009688;
+}
+#email .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-underline:after,
+#name .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-underline:after,
+#password .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-underline:after {
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transform: scaleX(0);
+  border-bottom: #009688 1px solid;
+}
+
+#submitBtn {
+  background-color: #009688;
+}
+
+.navbar {
+  margin: 0 auto;
+  min-width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-right: 0;
+}
+.navbar .navItem {
+  font-family: "urbane", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  text-decoration-line: none;
+  color: white;
+}
+
+#logo {
+  font-family: "mokoko", serif;
+  color: #009688;
+  font-size: 2em;
+  text-decoration-line: none;
+  margin: 0 auto;
+  min-width: 100%;
+  padding-top: 0.5em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: max(100vh);
+  display: inline-block;
+  width: 100%;
+  background-color: #212121;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+button label.MuiBottomNavigationAction-root {
+  color: white;
+}
+
+.card {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.card .cardContent, .card h2 {
+  color: white;
+  background: #212121;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.card .cardContent .cardBody, .card h2 .cardBody {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  color: #009688;
+  margin: 0 auto;
+}
+.input label.MuiFormLabel-root {
+  color: #565656;
+}
+.input label.MuiFormLabel-root.Mui-focused {
+  color: #303030;
+}
+.input .Mui-focused.MuiInputBase-formControl.Mui-focused {
+  color: #009688;
+  border-bottom: #009688 1px solid;
+}
+.input .MuiInputBase-input {
+  color: #009688;
+}
+.input .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-underline:after {
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transform: scaleX(0);
+  border-bottom: #009688 1px solid;
+}
+.input div {
+  margin-bottom: 1em;
+}
+
+button.button {
+  background: #009688;
+}
+button.button ::hover {
+  background: #303030;
+}
+
+.MuiButtonBase-root, .MuiButton-containedSizeLarge {
+  background: #303030;
+}
+
+div.MuiAlert-filledInfo {
+  background: #009688;
+}
+
+@media (max-width: 600px) {
+  html,
+body {
+    font-size: 100%;
+  }
+}

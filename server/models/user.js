@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import crypto from "crypto";
+const mongoose = require("mongoose");
+const crypto = require("crypto");
 const Schema = mongoose.Schema;
 
 let randomId = () => {
@@ -7,8 +7,6 @@ let randomId = () => {
     .toString(16)
     .substring(1);
 };
-//testing randomID
-console.log(randomId());
 
 const userSchema = new Schema({
   profileId: {
@@ -35,18 +33,6 @@ const userSchema = new Schema({
   salt: {
     type: String,
   },
-  completedPolls: [{ pollId: String }],
-  polls: [
-    {
-      pollId: { type: String, default: randomId(), required: true },
-    },
-    { pollTitle: { type: String } },
-    {
-      pollOptions: [
-        { optionTitle: { type: String }, optionVal: { type: Number } },
-      ],
-    },
-  ],
 });
 userSchema
   .virtual("password")
@@ -88,4 +74,4 @@ userSchema.path("hashedPassword").validate(function (v) {
   }
 }, null);
 
-export default mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);

@@ -1,0 +1,26 @@
+@import url("https://use.typekit.net/zfa7adf.css");
+*,
+p,
+input,
+label {
+  background-color: #3030;
+  font-family: "urbane", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: "white";
+}
+
+.container {
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  min-width: 100%;
+  color: white;
+}
+
+#root#container {
+  height: 100vh;
+  margin: 0;
+}

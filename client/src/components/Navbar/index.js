@@ -13,7 +13,7 @@ import '../index.scss';
 
 
 const isActive = (history, path) => {
-  if (history.location.pathname === path) return { color: "#009688" };
+  if (history.location.pathname === path) return { color: "#009688"};
   else return { color: "#ffffff" };
 };
 const Menu = withRouter(({ history }) => (
@@ -35,7 +35,7 @@ const Menu = withRouter(({ history }) => (
           <Link to="/signup" className='navItem'>
             <Button style={isActive(history, "/signup")}>Sign up</Button>
           </Link>
-          <Link to="/signin">
+          <Link to="/signin" className='navItem'>
             <Button style={isActive(history, "/signin")}>Sign In</Button>
           </Link>
         </span>
@@ -47,11 +47,11 @@ const Menu = withRouter(({ history }) => (
           <Home />
         </IconButton>
         </Link>
-          <Link to={"/users/" + auth.isAuthenticated().user._id} className='navItem'>
+          <Link to="/profile/:_id" className='navItem'>
             <Button
               style={isActive(
                 history,
-                "/users/" + auth.isAuthenticated().user._id
+                "/profile/:_id"
               )}
             >
               My Profile

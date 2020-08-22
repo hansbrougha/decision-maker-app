@@ -1,0 +1,9 @@
+export const UPDATE_POLLS = "UPDATE_POLLS";
+export const REMOVE_POLL = "REMOVE_POLL";
+export const SET_CURRENT_POLL = "SET_CURRENT_POLL";
+export const ADD_POLL = "ADD_POLL";
+export const LOADING = "LOADING";
+
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const REMOVE_FAVORITE = "REMOVE_FAVORITE";
+export const UPDATE_FAVORITES = "UPDATE_FAVORITES";

@@ -1,32 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper"
 import BottomNav from "../BottomNav";
+import auth from "../auth/auth-helper";
+import { Link, withRouter } from "react-router-dom";
 
-import '../index.scss'; 
+import '../index.scss';
 
-// const useStyles = makeStyles((theme) => ({
-//   footer: {
-//     width: '100%',
-//     height: '3em', 
-//     padding: theme.spacing(6, 0),
-//     background: '#212121',
-//     position: 
-//   }
-// }));
+const Footer = withRouter(({ history }) =>  (
+    <div>
+      {!auth.isAuthenticated() && (
+        
+        <footer className='footer'>
 
-export default function Footer() {
+          <Link to='/' className="navLink" id='logo'><p type="title" id='logo'>
+            unbiased.io
+          </p>
+          </Link>
+          <Typography variant='caption'>
+            Andrew Hansbrough, Jacob Walton, Joe Stutsman & Angel Schultz  
+          </Typography>
+        </footer>
+       
+      )}
+      {auth.isAuthenticated() && (
+        
+        <footer className='footer'>
+          <BottomNav />
+          <Link to='/' className="navLink" id='logo'><p type="title" id='logo'>
+            unbiased.io
+      </p>
+          </Link>
+          <Typography variant='caption'>
+            Andrew Hansbrough, Jacob Walton, Joe Stutsman & Angel Schultz  
+          </Typography>
+        </footer>
+       
+      )}
+    </div>
+));
 
-
-  return (
-    <footer className='footer'>
-       <Link to='/' className="navLink" id='logo'><p type="title" id='logo'>
-        unbiased.io
-      </p></Link>
-    </footer>
-  );
-}
+export default Footer;

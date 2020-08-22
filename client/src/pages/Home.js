@@ -5,26 +5,28 @@ import CardContent from "@material-ui/core/CardContent";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import "../components/index.scss";
+import "./index.scss";
 import PollIcon from "@material-ui/icons/Poll";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import Container from '@material-ui/core/Container';
 
 const styles = (theme) => ({
   grid: {
     margin: '0 auto',
+    padding: '1em', 
     width: 'fit-content'
   },
   card: {
     margin: "0 auto",
-    marginTop: theme.spacing(5),
     backgroundColor: '#212121',
-    width: 'fit-content',
     color: 'white',
+    width: '100%',
     textAlign: 'center'
   },
   icon: {
     fontSize: '5em',
     color: '#009688',
+    textAlign: 'center', 
     margin: '0.25em'
   },
 
@@ -38,10 +40,10 @@ class Home extends Component {
         <Typography variant='h1'>
           Welcome! <br />
         </Typography>
-        <Grid container className={classes.grid} spacing={3}> 
+        <Grid container className={classes.grid} spacing={1}> 
           <Grid item>
               <Card className={classes.card}>
-                <CardContent className="card" align="center">
+                <CardContent align="center">
                   <a href="/signup">
                     <FontAwesomeIcon
                       title="Sign Up"
@@ -60,7 +62,7 @@ class Home extends Component {
           <Grid item >
 
               <Card className={classes.card}>
-                <CardContent className="card">
+                <CardContent >
                   <a href="/signin">
                   <FontAwesomeIcon
                       title="Sign Up"
