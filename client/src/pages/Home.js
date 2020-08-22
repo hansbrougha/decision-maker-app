@@ -9,7 +9,8 @@ import "./index.scss";
 import PollIcon from "@material-ui/icons/Poll";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link'; 
+import { Link, withRouter } from "react-router-dom";
+
 
 const styles = (theme) => ({
   grid: {
@@ -65,6 +66,7 @@ class Home extends Component {
               <Card className={classes.card}>
                 <CardContent >
                   <Link to="/signin">
+                    
                   <FontAwesomeIcon
                       title="Sign Up"
                       icon={['fad', 'sign-in']}
