@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import "../components/index.scss";
 import Container from '@material-ui/core/Container';
-
+import Link from '@material-ui/core/Link'; 
 
 const styles = (theme) => ({
   grid: {
@@ -44,13 +44,13 @@ class Authorized extends Component {
           <Grid item>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <a href="/create">
+                  <Link to="/create">
                     <FontAwesomeIcon
                       title="Create"
                       icon={['fad', 'plus']}
                       className={classes.icon}
                     />
-                  </a>
+                  </Link>
 
                   <Typography  component="h2">
                     Create
@@ -63,14 +63,14 @@ class Authorized extends Component {
 
               <Card className={classes.card}>
                 <CardContent>
-                  <a href="/results/:_id">
+                  <Link to="/results/:_id">
                   <FontAwesomeIcon
                       title="Results"
                       icon={['fad', 'poll-people']}
                       className={classes.icon}
                       onClick={isActive}
                     />
-                  </a>
+                  </Link>
 
                   <Typography  component="h2">
                    Results
@@ -83,13 +83,13 @@ class Authorized extends Component {
 
               <Card className={classes.card}>
                 <CardContent>
-                  <a href="/recent">
+                  <Link to="/recent">
                   <FontAwesomeIcon
                       title="Recents"
                       icon={['fad', 'redo-alt']}
                       className={classes.icon}
                     />
-                  </a>
+                  </Link>
 
                   <Typography  component="h2">
                     Recent
