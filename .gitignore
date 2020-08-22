@@ -1,8 +1,5 @@
 node_modules
 .vscode
-<<<<<<< HEAD
-.env
-=======
 .env
 client/build
->>>>>>> origin
+.npmrc
